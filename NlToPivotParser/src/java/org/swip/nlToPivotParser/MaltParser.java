@@ -43,7 +43,8 @@ public class MaltParser {
                 try {
                     serviceEn = new MaltParserService();
                     // on mirail server
-                    serviceEn.initializeParserModel("-c engmalt.linear-1.7 -m parse -w /home/cpradel/apache-tomcat-7.0.32/webapps/NlToPivotParser/WEB-INF/classes/ -lfi parser.log");
+                    serviceEn.initializeParserModel("-c engmalt.linear-1.7 -m parse -w C:\\Users\\Administrateur\\Documents\\NetBeansProjects\\NlToPivotParser\\build\\web\\WEB-INF\\classes\\ -lfi parser.log");
+                    logger.info("fin parserModel");
                     // on irit server
 //                    serviceEn.initializeParserModel("-c engmalt.linear-1.7 -m parse -w /usr/local/WWW/recherches/MELODI/swip/WEB-INF/classes/ -lfi parser.log");
                     // on my computer
@@ -68,13 +69,14 @@ public class MaltParser {
                 }
             }
             serviceToUse = serviceFr;
+            logger.info("anglais !");
         } else {
             // Todo: rise exception
         }
-
-        DependencyStructure graph = serviceToUse.parse(formatedTokens);
+        DependencyStructure  graph = serviceToUse.parse(formatedTokens);
         logger.info("MaltParser result:");
         displayDependencyTree(graph);
+
         return graph;
     }
     

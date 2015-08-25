@@ -1,0 +1,1292 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY cinema "http://ontologies.alwaysdata.net/cinema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY turtle "http://www.semanticweb.org/owl/owlapi/turtle#" >
+    <!ENTITY cesar2012 "http://ontologies.alwaysdata.net/cinema/cesar2012.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#"
+     xml:base="http://ontologies.alwaysdata.net/cinema/cannes2011.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cinema="http://ontologies.alwaysdata.net/cinema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:cesar2012="http://ontologies.alwaysdata.net/cinema/cesar2012.owl#"
+     xmlns:turtle="http://www.semanticweb.org/owl/owlapi/turtle#">
+    <owl:Ontology rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl">
+        <owl:imports rdf:resource="http://ontologies.alwaysdata.net/cinema"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Categorie_Camera_d_or_2011 -->
+
+    <owl:NamedIndividual rdf:about="&cinema;Categorie_Camera_d_or_2011">
+        <rdfs:label xml:lang="fr">Categorie Camera d or 2011</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Categorie_Cinefondation_2011 -->
+
+    <owl:NamedIndividual rdf:about="&cinema;Categorie_Cinefondation_2011">
+        <rdfs:label xml:lang="fr">Categorie Cinefondation 2011</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Categorie_Festival_2011 -->
+
+    <owl:NamedIndividual rdf:about="&cinema;Categorie_Festival_2011">
+        <rdfs:label xml:lang="fr">Categorie Festival 2011</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Categorie_Un_Certain_Regard_2011 -->
+
+    <owl:NamedIndividual rdf:about="&cinema;Categorie_Un_Certain_Regard_2011">
+        <rdfs:label xml:lang="fr">Categorie Un Certain Regard 2011</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="&cinema;FestivalDeCannes2011"/>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#JeanDujardin -->
+
+    <owl:NamedIndividual rdf:about="&cinema;JeanDujardin"/>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#AlMarthaLauf -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#AlMarthaLauf">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#ApresLeSud -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#ApresLeSud">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Arirang -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Arirang">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#ArretEnPleineVoie -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#ArretEnPleineVoie">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Atmen -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Atmen">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#AuRevoir -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#AuRevoir">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Bear -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Bear">
+        <rdf:type rdf:resource="&cinema;CourtMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Beauty -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Beauty">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#BefetachBeity -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#BefetachBeity">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#BernardoBertolucci -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#BernardoBertolucci">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#BigMuddy -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#BigMuddy">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Bonsai -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Bonsai">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#BradPitt -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#BradPitt">
+        <rdfs:label xml:lang="fr">BradPitt</rdfs:label>
+        <cinema:incarne rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MOBrien"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#CameraDOrFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#CameraDOrFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;CameraOr"/>
+        <cinema:estDecernePar rdf:resource="&cinema;FestivalDeCannes2011"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LasAcacias"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#CeNEstRien -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#CeNEstRien">
+        <rdf:type rdf:resource="&cinema;CourtMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Cinefondation_Festival_de_Cannes_2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Cinefondation_Festival_de_Cannes_2011">
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#CorpoCeleste -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#CorpoCeleste">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#CrossCountry -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#CrossCountry">
+        <rdf:type rdf:resource="&cinema;CourtMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DerWechselbalg -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DerWechselbalg">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DeuxiemePrixCinefondationFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DeuxiemePrixCinefondationFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;DeuxiemePrixCinefondation"/>
+        <rdfs:label xml:lang="fr">Deuxieme Prix Cinefondation Festival de Cannes 2011</rdfs:label>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Drari"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DiasDeGracia -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DiasDeGracia">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DixSeptFilles -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DixSeptFilles">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Drari -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Drari">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Drive -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Drive">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DueloAntesDaNoite -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#DueloAntesDaNoite">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Elena -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Elena">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#EnVille -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#EnVille">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#EtMaintenantOnVaOu -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#EtMaintenantOnVaOu">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;FestivalDeCannes"/>
+        <cinema:aPourDureeJour rdf:datatype="&xsd;integer">11</cinema:aPourDureeJour>
+        <cinema:aPourDateDebut rdf:datatype="&xsd;dateTime">2011-05-11T00:00:00</cinema:aPourDateDebut>
+        <cinema:aPourDateFin rdf:datatype="&xsd;dateTime">2011-05-22T00:00:00</cinema:aPourDateFin>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Footnote -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Footnote">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Ghost -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Ghost">
+        <rdf:type rdf:resource="&cinema;CourtMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011">
+        <rdf:type rdf:resource="&cinema;GrandPrixCinemaELLE"/>
+        <cinema:aPourDureeJour rdf:datatype="&xsd;int">1</cinema:aPourDureeJour>
+        <cinema:aPourDateFin rdf:datatype="&xsd;dateTime">2011-10-07T00:00:00</cinema:aPourDateFin>
+        <cinema:aPourDateDebut rdf:datatype="&xsd;dateTime">2011-10-07T00:00:00</cinema:aPourDateDebut>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixFestivalDeCannes2011_1 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixFestivalDeCannes2011_1">
+        <rdf:type rdf:resource="&cinema;GrandPrix"/>
+        <rdfs:label xml:lang="fr">Grand_Prix_Festival_de_Cannes_2011_1</rdfs:label>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LeGaminAuVelo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixFestivalDeCannes2011_2 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixFestivalDeCannes2011_2">
+        <rdf:type rdf:resource="&cinema;GrandPrix"/>
+        <rdfs:label xml:lang="fr">Grand_Prix_Festival_de_Cannes_2011_2</rdfs:label>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#IlEtaitUneFoisEnAnatolie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#HabemusPapam -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#HabemusPapam">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#HanezuLEspritDesMontagnes -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#HanezuLEspritDesMontagnes">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#HaraKiriMortDUnSamourai -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#HaraKiriMortDUnSamourai">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#HorsSatan -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#HorsSatan">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#IlEtaitUneFoisEnAnatolie -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#IlEtaitUneFoisEnAnatolie">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JeanPierreMichael -->
+
+    <owl:Thing rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JeanPierreMichael">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Jean-Pierre Michaël</rdfs:label>
+        <cinema:estLeDoubleurDeRole rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MOBrien"/>
+        <cinema:estDoubleurDans rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TreeOfLifeVF"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JohnnyTo -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JohnnyTo">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+        <cinema:estMembreDuJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JosephCedar -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JosephCedar">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;Jury"/>
+        <cinema:deliberePourCompetition rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:aPourMembreDeJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JohnnyTo"/>
+        <cinema:aPourMembreDeJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LinnUllmann"/>
+        <cinema:aPourMembreDeJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MahamatSalehHaroun"/>
+        <cinema:aPourMembreDeJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MartinaGusman"/>
+        <cinema:aPourMembreDeJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#NansunShi"/>
+        <cinema:aPourMembreDeJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#OlivierAssayas"/>
+        <cinema:estPresidePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#RobertDeNiro"/>
+        <cinema:aPourMembreDeJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#RobertDeNiro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#KirstenDunst -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#KirstenDunst">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Kjottsar -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Kjottsar">
+        <rdf:type rdf:resource="&cinema;CourtMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LApolionideSouvenirsDeLaMaisonClose -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LApolionideSouvenirsDeLaMaisonClose">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LEstateCheNonViene -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LEstateCheNonViene">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LExerciceDeLEtat -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LExerciceDeLEtat">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+        <cinema:concourePourCompetition rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LaPielQueHabito -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LaPielQueHabito">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LaSourceDesFemmes -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LaSourceDesFemmes">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LasAcacias -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LasAcacias">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LeGaminAuVelo -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LeGaminAuVelo">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LeHavre -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LeHavre">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LeNomDesGens -->
+
+    <owl:Thing rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LeNomDesGens">
+        <rdf:type rdf:resource="&cinema;Film"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">LeNomDesGens</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LesCrimesDeSnowtown -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LesCrimesDeSnowtown">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LesNeigesDuKilimandjaro -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LesNeigesDuKilimandjaro">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+        <cinema:concourePourCompetition rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LinnUllmann -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LinnUllmann">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+        <cinema:estMembreDuJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Loverboy -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Loverboy">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LunchboxStory -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LunchboxStory">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MOBrien -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MOBrien">
+        <rdf:type rdf:resource="&cinema;Role"/>
+        <rdfs:label xml:lang="fr">M. O&#39;Brien</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MahamatSalehHaroun -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MahamatSalehHaroun">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+        <cinema:estMembreDuJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MaillotDeBain46 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MaillotDeBain46">
+        <rdf:type rdf:resource="&cinema;CourtMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Maiwenn -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Maiwenn">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MarthaMarcyMayMarlene -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MarthaMarcyMayMarlene">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MartinaGusman -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MartinaGusman">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+        <cinema:estMembreDuJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Melancholia -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Melancholia">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Michael -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Michael">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MichelLeclerc -->
+
+    <owl:Thing rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MichelLeclerc">
+        <rdf:type rdf:resource="&cinema;Realisateur"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">MichelLeclerc</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MissBala -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MissBala">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MonPireCauchemar -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MonPireCauchemar">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#NansunShi -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#NansunShi">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+        <cinema:estMembreDuJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#NicolasWidingRefn -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#NicolasWidingRefn">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#OhMyGod -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#OhMyGod">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Okhotnik -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Okhotnik">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#OlivierAssayas -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#OlivierAssayas">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+        <cinema:estMembreDuJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Oslo31Aout -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Oslo31Aout">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#OutOfBounds -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#OutOfBounds">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Pater -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Pater">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PaternalWomb -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PaternalWomb">
+        <rdf:type rdf:resource="&cinema;CourtMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Polisse -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Polisse">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+        <cinema:concourePourCompetition rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PouletAuxPrunes -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PouletAuxPrunes">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PremierPrixCinefondationFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PremierPrixCinefondationFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;PremierPrixCinefondation"/>
+        <rdfs:label xml:lang="fr">Premier Prix Cinefondation Festival de Cannes 2011</rdfs:label>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Arirang"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixHonneurFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixHonneurFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;PrixHonneur"/>
+        <cinema:recompensePersonne rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#BernardoBertolucci"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixJuryFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixJuryFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;PrixJury"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:recompensePersonne rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Maiwenn"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Polisse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurActeurFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurActeurFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;PrixMeilleurActeur"/>
+        <cinema:recompensePersonne rdf:resource="&cinema;JeanDujardin"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:recompenseFilm rdf:resource="&cesar2012;TheArtist"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurFilmFestivalDeCannes2011_1 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurFilmFestivalDeCannes2011_1">
+        <rdf:type rdf:resource="&cinema;PrixMeilleurFilm"/>
+        <rdfs:label xml:lang="fr">Prix Meilleur Film Festival de Cannes 2011 1</rdfs:label>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TreeOfLife"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurFilmFestivalDeCannes2011_2 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurFilmFestivalDeCannes2011_2">
+        <rdf:type rdf:resource="&cinema;PrixMeilleurFilm"/>
+        <rdfs:label xml:lang="fr">Prix Meilleur Film Festival de Cannes 2011 2</rdfs:label>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#CrossCountry"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurFilmGrandPrixCinemaElle2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurFilmGrandPrixCinemaElle2011">
+        <rdf:type rdf:resource="&cinema;PrixMeilleurFilm"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Polisse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurScenarioFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleurScenarioFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;PrixMeilleurScenario"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Footnote"/>
+        <cinema:recompensePersonne rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JosephCedar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleureActriceFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleureActriceFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;PrixMeilleureActrice"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:recompensePersonne rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#KirstenDunst"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Melancholia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleureMiseEnSceneFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMeilleureMiseEnSceneFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;PrixMeilleureMiseEnScene"/>
+        <rdfs:label xml:lang="fr">Prix Meilleure Mise en Scene Festival de Cannes 2011</rdfs:label>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Drive"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:recompensePersonne rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#NicolasWidingRefn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMiseEnSceneUnCertainRegardFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixMiseEnSceneUnCertainRegardFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;PrixMiseEnSceneUnCertainRegard"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#AuRevoir"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixSpecialJuryUnCertainRegardFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixSpecialJuryUnCertainRegardFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;PrixSpecialJuryUnCertainRegard"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Elena"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixUnCertainRegardFestivalDeCannes2011_1 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixUnCertainRegardFestivalDeCannes2011_1">
+        <rdf:type rdf:resource="&cinema;PrixUnCertainRegard"/>
+        <rdfs:label xml:lang="fr">Prix Un Certain Regard Festival de Cannes 2011 1</rdfs:label>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#ArretEnPleineVoie"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixUnCertainRegardFestivalDeCannes2011_2 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#PrixUnCertainRegardFestivalDeCannes2011_2">
+        <rdf:type rdf:resource="&cinema;PrixUnCertainRegard"/>
+        <rdfs:label xml:lang="fr">Prix Un Certain Regard Festival de Cannes 2011 2</rdfs:label>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Arirang"/>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Restless -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Restless">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Return -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Return">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#RobertDeNiro -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#RobertDeNiro">
+        <rdf:type rdf:resource="&cinema;Personne"/>
+        <cinema:presideLeJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011"/>
+        <cinema:estMembreDuJury rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#JuryFestivalDeCannes2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Salsipuedes -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Salsipuedes">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#SaraForestier -->
+
+    <owl:Thing rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#SaraForestier">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">SaraForestier</rdfs:label>
+        <cinema:estActeurDans rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#LeNomDesGens"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Shame -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Shame">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#SleepingBeauty -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#SleepingBeauty">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#SoyTanFeliz -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#SoyTanFeliz">
+        <rdf:type rdf:resource="&cinema;CourtMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#SuuEtUchikawa -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#SuuEtUchikawa">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TakeShelter -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TakeShelter">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Tatsumi -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Tatsumi">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TeteDeViande -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TeteDeViande">
+        <rdf:type rdf:resource="&cinema;CourtMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheAgonyAndSweatOfTheHumanSpirit -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheAgonyAndSweatOfTheHumanSpirit">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheDayHeArrives -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheDayHeArrives">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheLetter -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheLetter">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheMurderer -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheMurderer">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheSlut -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheSlut">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheTrip -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheTrip">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheWeddingParty -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TheWeddingParty">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#ThisMustBeThePlace -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#ThisMustBeThePlace">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TigreZKlietky -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TigreZKlietky">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Toomelah -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Toomelah">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Un_Certain_Regard_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#ToutesNosEnvies -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#ToutesNosEnvies">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#GrandPrixCinemaELLE2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TravaillerFatigue -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TravaillerFatigue">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TreeOfLife -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TreeOfLife">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+        <cinema:aPourRole rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#MOBrien"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TreeOfLifeVF -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TreeOfLifeVF">
+        <rdf:type rdf:resource="&cinema;Film"/>
+        <rdfs:label xml:lang="fr">Tree_of_lifeVF</rdfs:label>
+        <cinema:estLocalisePour rdf:resource="&cinema;France"/>
+        <cinema:estUneLocalisationDe rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TreeOfLife"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TroisiemePrixCinefondationFestivalDeCannes2011 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#TroisiemePrixCinefondationFestivalDeCannes2011">
+        <rdf:type rdf:resource="&cinema;TroisiemePrixCinefondation"/>
+        <rdfs:label xml:lang="fr">Troisieme Prix Cinefondation Festival de Cannes 2011</rdfs:label>
+        <cinema:estDecernePar rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#FestivalDeCannes2011"/>
+        <cinema:recompenseFilm rdf:resource="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#YaGanBiHang"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Volcano -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#Volcano">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Camera_d_or_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#WeNeedToTalkAboutKevin -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#WeNeedToTalkAboutKevin">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Festival_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cannes2011.owl#YaGanBiHang -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies.alwaysdata.net/cinema/cannes2011.owl#YaGanBiHang">
+        <rdf:type rdf:resource="&cinema;LongMetrage"/>
+        <rdfs:label>Ya gang bi hang</rdfs:label>
+        <cinema:concourePourCompetition rdf:resource="&cinema;Categorie_Cinefondation_2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema/cesar2012.owl#TheArtist -->
+
+    <owl:NamedIndividual rdf:about="&cesar2012;TheArtist"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

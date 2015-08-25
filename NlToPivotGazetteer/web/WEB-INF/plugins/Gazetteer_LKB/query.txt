@@ -1,0 +1,10 @@
+PREFIX cinema:<http://ontologies.alwaysdata.net/cinema#>
+PREFIX cannes2011:<http://ontologies.alwaysdata.net/cinema/cannes2011.owl#>
+PREFIX cesar2012:<<http://ontologies.alwaysdata.net/cinema/cesar2012.owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?lab ?s
+WHERE
+{
+	?s rdfs:label ?lab
+}
+LIMIT 200

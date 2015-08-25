@@ -1,0 +1,4231 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY event "http://purl.org/NET/c4dm/event.owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY cinema "http://ontologies.alwaysdata.net/cinema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://ontologies.alwaysdata.net/cinema#"
+     xml:base="http://ontologies.alwaysdata.net/cinema"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+     xmlns:cinema="http://ontologies.alwaysdata.net/cinema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://ontologies.alwaysdata.net/cinema"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aEcritScenario -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aEcritScenario">
+        <rdfs:label xml:lang="fr">a écrit le scénario de</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;aPourScenariste"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueArtistiquementAOeuvre"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueAuFilm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aFigureDans -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aFigureDans">
+        <rdfs:label xml:lang="fr">a figuré dans</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;aPourFigurant"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueArtistiquementAOeuvre"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueAuFilm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourActeur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourActeur">
+        <rdfs:label xml:lang="fr">a pour acteur</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;filmAPourContributeur"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;oeuvreAPourContributeurArtistique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourFigurant -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourFigurant">
+        <rdfs:label xml:lang="fr">a pour figurant</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;filmAPourContributeur"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;oeuvreAPourContributeurArtistique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourGenre -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourGenre">
+        <rdfs:label xml:lang="fr">a pour genre</rdfs:label>
+        <rdfs:label xml:lang="fr">est du genre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourJury -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourJury">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="fr">a pour jury</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;deliberePourCompetition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourLieu -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourLieu">
+        <rdfs:label xml:lang="fr">a pour lieu</rdfs:label>
+        <rdfs:range rdf:resource="&cinema;Lieu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourLieuDeTournage -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourLieuDeTournage">
+        <rdfs:label xml:lang="fr">a pour lieu de tournage</rdfs:label>
+        <rdfs:label xml:lang="fr">est tourne à/en/dans</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourLieu"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;aPourLieuDeTournage"/>
+            <rdf:Description rdf:about="&cinema;estSitueDans"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourLieuMort -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourLieuMort">
+        <rdfs:label xml:lang="fr">a pour lieu de mort</rdfs:label>
+        <rdfs:label xml:lang="fr">est mort en</rdfs:label>
+        <rdfs:label xml:lang="fr">est mort à</rdfs:label>
+        <rdfs:comment xml:lang="fr">est mort à/en/dans</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourLieu"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;aPourLieuMort"/>
+            <rdf:Description rdf:about="&cinema;estSitueDans"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourLieuNaissance -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourLieuNaissance">
+        <rdfs:label xml:lang="fr">a pour lieu de naissance</rdfs:label>
+        <rdfs:label xml:lang="fr">est né à/en/dans</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourLieu"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;aPourLieuNaissance"/>
+            <rdf:Description rdf:about="&cinema;estSitueDans"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourMembreDeJury -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourMembreDeJury">
+        <rdfs:label xml:lang="fr">a pour membre de jury</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre un jury et l&#39;un de ses membres</rdfs:comment>
+        <owl:inverseOf rdf:resource="&cinema;estMembreDuJury"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourOrigineGeographique -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourOrigineGeographique">
+        <rdfs:label xml:lang="fr">a pour origine géographique</rdfs:label>
+        <rdfs:comment xml:lang="fr">origine de quelque-chose qui n&#39;est pas vivant (courant cinématographique, genre...)</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourLieu"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;aPourOrigineGeographique"/>
+            <rdf:Description rdf:about="&cinema;estSitueDans"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourProducteur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourProducteur">
+        <rdfs:label xml:lang="fr">a pour producteur</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;filmAPourContributeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourRealisateur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourRealisateur">
+        <rdfs:label xml:lang="fr">a pour realisateur</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;aRealise"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;filmAPourContributeur"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;oeuvreAPourContributeurArtistique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourRecompense -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourRecompense"/>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourRecompenseFilm -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourRecompenseFilm">
+        <rdfs:label xml:lang="fr">a pour récompense</rdfs:label>
+        <rdfs:comment xml:lang="fr">relie un film à sa récompense ou à celle d&#39;un des contributeurs à ce film</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourRecompense"/>
+        <owl:inverseOf rdf:resource="&cinema;recompenseFilm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourRecompensePersonne -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourRecompensePersonne">
+        <rdfs:label xml:lang="fr">a pour récompense</rdfs:label>
+        <rdfs:comment xml:lang="fr">relie une personne à sa récompense</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourRecompense"/>
+        <owl:inverseOf rdf:resource="&cinema;recompensePersonne"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourRole -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourRole">
+        <rdfs:label xml:lang="fr">a pour rôle</rdfs:label>
+        <rdfs:comment xml:lang="fr">les rôles qu&#39;il y a dans une oeuvre</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourScenariste -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourScenariste">
+        <rdfs:label xml:lang="fr">a pour scenariste</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;filmAPourContributeur"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;oeuvreAPourContributeurArtistique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourSexe -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourSexe">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">a pour sexe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourTechnique -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourTechnique">
+        <rdfs:label xml:lang="fr">a pour technique</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourTechniqueDAnimation -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourTechniqueDAnimation">
+        <rdfs:label xml:lang="fr">a pour technique d&#39;animation</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourTechnique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourTechniqueDePriseDeSon -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourTechniqueDePriseDeSon">
+        <rdfs:label xml:lang="fr">a pour technique de prise de son</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourTechnique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourTechniqueDePriseDeVues -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aPourTechniqueDePriseDeVues">
+        <rdfs:label xml:lang="fr">a pour technique de prise de vues</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourTechnique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aProduit -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aProduit">
+        <rdfs:label xml:lang="fr">a produit</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;aPourProducteur"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueAuFilm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aRealise -->
+
+    <owl:ObjectProperty rdf:about="&cinema;aRealise">
+        <rdfs:label xml:lang="fr">a réalisé</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueArtistiquementAOeuvre"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueAuFilm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#acteurAPourCascadeur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;acteurAPourCascadeur">
+        <rdfs:subPropertyOf rdf:resource="&cinema;acteurAPourDoublure"/>
+        <owl:inverseOf rdf:resource="&cinema;estCascadeurPourActeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#acteurAPourDoublure -->
+
+    <owl:ObjectProperty rdf:about="&cinema;acteurAPourDoublure">
+        <owl:inverseOf rdf:resource="&cinema;estLaDoublureDeActeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#acteurDoublePar -->
+
+    <owl:ObjectProperty rdf:about="&cinema;acteurDoublePar">
+        <rdfs:label xml:lang="fr">doublé par</rdfs:label>
+        <rdfs:label xml:lang="fr">est doublé par</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre un acteur et un doubleur ayant doublé au moins une fois cet acteur</rdfs:comment>
+        <owl:inverseOf rdf:resource="&cinema;estLeDoubleurDeActeur"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;incarne"/>
+            <rdf:Description rdf:about="&cinema;roleDoublePar"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#apparaitDans -->
+
+    <owl:ObjectProperty rdf:about="&cinema;apparaitDans">
+        <rdfs:label xml:lang="fr">apparait dans</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre un rôle et une oeuvre dans laquelle ce rôle apparait</rdfs:comment>
+        <owl:inverseOf rdf:resource="&cinema;aPourRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#concourePourCompetition -->
+
+    <owl:ObjectProperty rdf:about="&cinema;concourePourCompetition">
+        <rdfs:label xml:lang="fr">concoure</rdfs:label>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;concourePourPrix"/>
+            <rdf:Description rdf:about="&cinema;estDecernePar"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#concourePourPrix -->
+
+    <owl:ObjectProperty rdf:about="&cinema;concourePourPrix">
+        <rdfs:label xml:lang="fr">concoure pour</rdfs:label>
+        <rdfs:label xml:lang="fr">est nominé pour</rdfs:label>
+        <rdfs:comment xml:lang="fr">une oeuvre ou une personne qui concoure pour un prix</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#contribueAOeuvre -->
+
+    <owl:ObjectProperty rdf:about="&cinema;contribueAOeuvre">
+        <rdfs:label xml:lang="fr">contribue à</rdfs:label>
+        <rdfs:label xml:lang="fr">participe à</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#contribueArtistiquementAOeuvre -->
+
+    <owl:ObjectProperty rdf:about="&cinema;contribueArtistiquementAOeuvre">
+        <rdfs:label xml:lang="fr">contribue artistiquement à</rdfs:label>
+        <rdfs:label xml:lang="fr">participe artistiquement à</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueAOeuvre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#contribueAuFilm -->
+
+    <owl:ObjectProperty rdf:about="&cinema;contribueAuFilm">
+        <rdfs:label xml:lang="fr">contribue au film</rdfs:label>
+        <rdfs:label xml:lang="fr">fait partie de l&#39;équipe du film</rdfs:label>
+        <rdfs:label xml:lang="fr">participe au film</rdfs:label>
+        <rdfs:comment xml:lang="fr">pour les techniciens, on ne saura pas le role</rdfs:comment>
+        <rdfs:comment xml:lang="fr">relation entre un individu ayant participé à un film et ce film</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueAOeuvre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#decerne -->
+
+    <owl:ObjectProperty rdf:about="&cinema;decerne">
+        <rdfs:label xml:lang="fr">décerne</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;estDecernePar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#deliberePourCompetition -->
+
+    <owl:ObjectProperty rdf:about="&cinema;deliberePourCompetition">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="fr">délibère pour</rdfs:label>
+        <rdfs:label xml:lang="fr">est le jury de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estActeurDans -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estActeurDans">
+        <rdfs:label xml:lang="fr">a joué dans</rdfs:label>
+        <rdfs:label xml:lang="fr">est acteur dans</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;aPourActeur"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueArtistiquementAOeuvre"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueAuFilm"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;incarne"/>
+            <rdf:Description rdf:about="&cinema;apparaitDans"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estCascadeurDansFilm -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estCascadeurDansFilm">
+        <rdfs:subPropertyOf rdf:resource="&cinema;estDoublureDansFilm"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;estCascadeurPourRole"/>
+            <rdf:Description rdf:about="&cinema;apparaitDans"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estCascadeurPourActeur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estCascadeurPourActeur">
+        <rdfs:subPropertyOf rdf:resource="&cinema;estLaDoublureDeActeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estCascadeurPourRole -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estCascadeurPourRole">
+        <rdfs:subPropertyOf rdf:resource="&cinema;estLaDoublureDeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estDecernePar -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estDecernePar">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">est décerné par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estDoubleurDans -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estDoubleurDans">
+        <rdfs:label xml:lang="fr">est doubleur dans</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueArtistiquementAOeuvre"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueAuFilm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estDoublureDans -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estDoublureDans">
+        <rdfs:label xml:lang="fr">est doublure dans</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueArtistiquementAOeuvre"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;contribueAuFilm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estDoublureDansFilm -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estDoublureDansFilm">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;estLaDoublureDeRole"/>
+            <rdf:Description rdf:about="&cinema;apparaitDans"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estIncarnePar -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estIncarnePar">
+        <rdfs:label xml:lang="fr">est incarné par</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estLaDoublureDeActeur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estLaDoublureDeActeur"/>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estLaDoublureDeRole -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estLaDoublureDeRole"/>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estLeDoubleurDeActeur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estLeDoubleurDeActeur">
+        <rdfs:label xml:lang="fr">double l&#39;acteur</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre un doubleur et l&#39;acteur qu&#39;il a doublé</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;estLeDoubleurDeRole"/>
+            <rdf:Description rdf:about="&cinema;estIncarnePar"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estLeDoubleurDeRole -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estLeDoubleurDeRole">
+        <rdfs:comment xml:lang="fr">relation entre un doubleur et le rôle qu&#39;il a doublé</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estLocalisePour -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estLocalisePour">
+        <rdfs:label xml:lang="fr">est localisé pour</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre un film localisé et la zone géographique pour laquelle il a été localisé</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estMembreDeJuryPourCompetition -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estMembreDeJuryPourCompetition">
+        <rdfs:label xml:lang="fr">est membre du jury pour</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre une personne et une compétition pour laquelle cette personne a été membre du jury</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;estMembreDuJury"/>
+            <rdf:Description rdf:about="&cinema;deliberePourCompetition"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estMembreDuJury -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estMembreDuJury">
+        <rdfs:label xml:lang="fr">est membre du jury</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre une personne et un jury auquel cette personne a pris part</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estPresidePar -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estPresidePar">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">a pour président</rdfs:label>
+        <rdfs:label xml:lang="fr">est présidé par</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre un jury et le président de ce jury</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourMembreDeJury"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estRecompenseA -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estRecompenseA">
+        <rdfs:label xml:lang="fr">est récompense à</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre une personne et un compétition à laquelle cette personne a reçu un prix</rdfs:comment>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;aPourRecompense"/>
+            <rdf:Description rdf:about="&cinema;estDecernePar"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estRecompensePour -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estRecompensePour">
+        <rdfs:label xml:lang="fr">est récompensé pour le film</rdfs:label>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;aPourRecompensePersonne"/>
+            <rdf:Description rdf:about="&cinema;recompenseFilm"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estSitueDans -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estSitueDans">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label xml:lang="fr">est situé à/en/dans</rdfs:label>
+        <rdfs:label xml:lang="fr">se situe à/en/dans</rdfs:label>
+        <rdfs:comment xml:lang="fr">permet de dire qu&#39;un lieu est situé dans un autre lieu</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourLieu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estUneAdaptationDe -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estUneAdaptationDe">
+        <rdfs:domain rdf:resource="&cinema;Oeuvre"/>
+        <rdfs:range rdf:resource="&cinema;Oeuvre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#estUneLocalisationDe -->
+
+    <owl:ObjectProperty rdf:about="&cinema;estUneLocalisationDe">
+        <rdfs:label xml:lang="fr">est une localisation de</rdfs:label>
+        <rdfs:label xml:lang="fr">est une version de</rdfs:label>
+        <rdfs:comment xml:lang="fr">a pour oeuvre originale</rdfs:comment>
+        <rdfs:comment xml:lang="fr">relation entre une oeuvre localisée et l&#39;oeuvre originale dont elle est la localisation</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#filmAPourContributeur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;filmAPourContributeur">
+        <rdfs:label xml:lang="fr">a pour contributeur</rdfs:label>
+        <rdfs:label xml:lang="fr">a pour participant</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre un film et une personne ayant participé à ce film</rdfs:comment>
+        <owl:inverseOf rdf:resource="&cinema;contribueAuFilm"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;oeuvreAPourContributeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#filmAPourDoubleur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;filmAPourDoubleur">
+        <rdfs:label xml:lang="fr">a pour doubleur</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;estDoubleurDans"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;filmAPourContributeur"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;oeuvreAPourContributeurArtistique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#filmAPourDoublure -->
+
+    <owl:ObjectProperty rdf:about="&cinema;filmAPourDoublure">
+        <rdfs:label xml:lang="fr">a pour doublure</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;estDoublureDans"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;filmAPourContributeur"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;oeuvreAPourContributeurArtistique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#filmConcourePour -->
+
+    <owl:ObjectProperty rdf:about="&cinema;filmConcourePour">
+        <rdfs:label xml:lang="fr">concoure pour</rdfs:label>
+        <rdfs:label xml:lang="fr">est nominé pour</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;concourePourPrix"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#incarne -->
+
+    <owl:ObjectProperty rdf:about="&cinema;incarne">
+        <rdfs:label xml:lang="fr">incarne</rdfs:label>
+        <rdfs:label xml:lang="fr">incarne le rôle de</rdfs:label>
+        <rdfs:label xml:lang="fr">joue</rdfs:label>
+        <rdfs:label xml:lang="fr">joue le rôle de</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre un etre vivant et un role incarné par cet être vivant</rdfs:comment>
+        <owl:inverseOf rdf:resource="&cinema;estIncarnePar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#oeuvreAPourContributeur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;oeuvreAPourContributeur">
+        <rdfs:label xml:lang="fr">a pour contributeur</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;contribueAOeuvre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#oeuvreAPourContributeurArtistique -->
+
+    <owl:ObjectProperty rdf:about="&cinema;oeuvreAPourContributeurArtistique">
+        <rdfs:label xml:lang="fr">a pour contributeur artistique</rdfs:label>
+        <owl:inverseOf rdf:resource="&cinema;contribueArtistiquementAOeuvre"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;oeuvreAPourContributeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#personneConcourePour -->
+
+    <owl:ObjectProperty rdf:about="&cinema;personneConcourePour">
+        <rdfs:label xml:lang="fr">concoure pour</rdfs:label>
+        <rdfs:label xml:lang="fr">est nominé pour</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;concourePourPrix"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#presideLeJury -->
+
+    <owl:ObjectProperty rdf:about="&cinema;presideLeJury">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="fr">est président de</rdfs:label>
+        <rdfs:label xml:lang="fr">préside</rdfs:label>
+        <rdfs:comment xml:lang="fr">relation entre une personne et un jury présidé par cette personne</rdfs:comment>
+        <owl:inverseOf rdf:resource="&cinema;estPresidePar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#recompense -->
+
+    <owl:ObjectProperty rdf:about="&cinema;recompense">
+        <owl:inverseOf rdf:resource="&cinema;aPourRecompense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#recompenseFilm -->
+
+    <owl:ObjectProperty rdf:about="&cinema;recompenseFilm">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">récompense</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;recompense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#recompensePersonne -->
+
+    <owl:ObjectProperty rdf:about="&cinema;recompensePersonne">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">récompense</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;recompense"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#roleAPourCascadeur -->
+
+    <owl:ObjectProperty rdf:about="&cinema;roleAPourCascadeur">
+        <owl:inverseOf rdf:resource="&cinema;estCascadeurPourRole"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;roleAPourDoublure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#roleAPourDoublure -->
+
+    <owl:ObjectProperty rdf:about="&cinema;roleAPourDoublure">
+        <owl:inverseOf rdf:resource="&cinema;estLaDoublureDeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#roleDoublePar -->
+
+    <owl:ObjectProperty rdf:about="&cinema;roleDoublePar">
+        <rdfs:label xml:lang="fr">est doublé par</rdfs:label>
+        <rdfs:comment xml:lang="fr">relie un rôle au doubleur qui l&#39;a doublé (dans une version localisée)</rdfs:comment>
+        <owl:inverseOf rdf:resource="&cinema;estLeDoubleurDeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#seDerouleDans -->
+
+    <owl:ObjectProperty rdf:about="&cinema;seDerouleDans">
+        <rdfs:label xml:lang="fr">se déroule à/en/dans</rdfs:label>
+        <rdfs:comment xml:lang="fr">permet d&#39;indiquer le lieu dans lequel se déroule un évènement (competition, film)</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourLieu"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;seDerouleDans"/>
+            <rdf:Description rdf:about="&cinema;estSitueDans"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourDate -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourDate">
+        <rdfs:label xml:lang="fr">aPourDate</rdfs:label>
+        <rdfs:comment xml:lang="fr">penser à date de tournage propre au film et pas au film localisée comme la sortie</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourDateDebut -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourDateDebut">
+        <rdfs:comment xml:lang="fr">correspond à la date de début d&#39;un évènement</rdfs:comment>
+        <rdfs:domain rdf:resource="&cinema;Evenement"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourDateFin -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourDateFin">
+        <rdfs:comment xml:lang="fr">correspond à la date de fin d&#39;un évènement</rdfs:comment>
+        <rdfs:domain rdf:resource="&cinema;Evenement"/>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourDateMort -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourDateMort">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">aPourDateMort</rdfs:label>
+        <rdfs:comment>concerne un individu</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourDateNaissance -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourDateNaissance">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">aPourDateNaissance</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourDateSortie -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourDateSortie">
+        <rdfs:label xml:lang="fr">aPourDateSortie</rdfs:label>
+        <rdfs:comment xml:lang="fr">pour les films + dvd</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourDate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourDuree -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourDuree">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourDureeJour -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourDureeJour">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">a pour durée</rdfs:label>
+        <rdfs:label xml:lang="fr">dure</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourDuree"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourDureeMinute -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourDureeMinute">
+        <rdfs:label xml:lang="fr">a pour durée</rdfs:label>
+        <rdfs:label xml:lang="fr">dure</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&cinema;aPourDuree"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourNom -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourNom">
+        <rdfs:label xml:lang="fr">a pour nom</rdfs:label>
+        <owl:equivalentProperty rdf:resource="&foaf;familyName"/>
+        <owl:equivalentProperty rdf:resource="&foaf;family_name"/>
+        <owl:equivalentProperty rdf:resource="&foaf;lastName"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourNombreDeMembreDeJury -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourNombreDeMembreDeJury">
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourPrenom -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourPrenom">
+        <rdfs:label xml:lang="fr">a pour prenom</rdfs:label>
+        <owl:equivalentProperty rdf:resource="&foaf;firstName"/>
+        <owl:equivalentProperty rdf:resource="&foaf;givenName"/>
+        <owl:equivalentProperty rdf:resource="&foaf;givenname"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#aPourTitre -->
+
+    <owl:DatatypeProperty rdf:about="&cinema;aPourTitre">
+        <owl:equivalentProperty rdf:resource="&terms;title"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="&terms;title"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/familyName -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;familyName"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/family_name -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;family_name"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/firstName -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;firstName"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/givenName -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;givenName"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/givenname -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;givenname"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/lastName -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;lastName"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Accessoiriste -->
+
+    <owl:Class rdf:about="&cinema;Accessoiriste">
+        <rdfs:label xml:lang="fr">Accessoiriste</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienDecor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Acteur -->
+
+    <owl:Class rdf:about="&cinema;Acteur">
+        <rdfs:label xml:lang="fr">acteur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;estActeurDans"/>
+                <owl:someValuesFrom rdf:resource="&cinema;Film"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>on entend acteur comme acteur de film (et pas de théatre)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurDeComplement -->
+
+    <owl:Class rdf:about="&cinema;ActeurDeComplement">
+        <rdfs:label xml:lang="fr">acteur de complément</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Artiste"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurFeminin -->
+
+    <owl:Class rdf:about="&cinema;ActeurFeminin">
+        <rdfs:label xml:lang="fr">actrice</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Acteur"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourSexe"/>
+                        <owl:hasValue rdf:resource="&cinema;Feminin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurMasculin -->
+
+    <owl:Class rdf:about="&cinema;ActeurMasculin">
+        <rdfs:label xml:lang="fr">acteur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Acteur"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourSexe"/>
+                        <owl:hasValue rdf:resource="&cinema;Masculin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>ajouter explication</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurNomine -->
+
+    <owl:Class rdf:about="&cinema;ActeurNomine">
+        <rdfs:label xml:lang="fr">acteur nominé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;PersonneNominee"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;personneConcourePour"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixInterpretation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;PersonneNominee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurPrime -->
+
+    <owl:Class rdf:about="&cinema;ActeurPrime">
+        <rdfs:label xml:lang="fr">acteur primé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;PersonnePrimee"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourRecompensePersonne"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixInterpretation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;PersonnePrimee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurPrimeCeremonieCesarDuCinema -->
+
+    <owl:Class rdf:about="&cinema;ActeurPrimeCeremonieCesarDuCinema">
+        <rdfs:label xml:lang="fr">acteur primé cérémonie des Cesars du Cinema</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;ActeurPrime"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estRecompenseA"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;CesarDuCinema"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurPrimeFestivalDeCannes -->
+
+    <owl:Class rdf:about="&cinema;ActeurPrimeFestivalDeCannes">
+        <rdfs:label xml:lang="fr">acteur primé au festival de Cannes</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;ActeurPrime"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estRecompenseA"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;FestivalDeCannes"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurPrimeFestivalDeClermontFerrand -->
+
+    <owl:Class rdf:about="&cinema;ActeurPrimeFestivalDeClermontFerrand">
+        <rdfs:label xml:lang="fr">acteur primé au festival de Clermont Ferrand</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;ActeurPrime"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estRecompenseA"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;FestivalDeClermontFerrand"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurPrimeFestivalDeDeauville -->
+
+    <owl:Class rdf:about="&cinema;ActeurPrimeFestivalDeDeauville">
+        <rdfs:label xml:lang="fr">acteur primé  au festival de Deauville</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;ActeurPrime"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estRecompenseA"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;FestivalDeDeauville"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurPrimeFestivalDuReel -->
+
+    <owl:Class rdf:about="&cinema;ActeurPrimeFestivalDuReel">
+        <rdfs:label xml:lang="fr">acteur primé au festival du réel</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;ActeurPrime"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estRecompenseA"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;FestivalDuReel"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ActeurPrimeGrandPrixCinemaELLE -->
+
+    <owl:Class rdf:about="&cinema;ActeurPrimeGrandPrixCinemaELLE">
+        <rdfs:label xml:lang="fr">acteur primé Grand Prix Cinema ELLE</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;ActeurPrime"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estRecompenseA"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;GrandPrixCinemaELLE"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#AireGeographique -->
+
+    <owl:Class rdf:about="&cinema;AireGeographique">
+        <rdfs:label xml:lang="fr">zone géographique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Lieu"/>
+        <rdfs:comment xml:lang="fr">aire géographique</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Animal -->
+
+    <owl:Class rdf:about="&cinema;Animal">
+        <rdfs:label xml:lang="fr">animal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#AnimalActeur -->
+
+    <owl:Class rdf:about="&cinema;AnimalActeur">
+        <rdfs:label xml:lang="fr">animal acteur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estActeurDans"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Film"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Artiste -->
+
+    <owl:Class rdf:about="&cinema;Artiste">
+        <rdfs:label xml:lang="fr">artiste</rdfs:label>
+        <rdfs:label xml:lang="fr">comedien</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;contribueArtistiquementAOeuvre"/>
+                <owl:someValuesFrom rdf:resource="&cinema;Oeuvre"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#AssistantOpérateur -->
+
+    <owl:Class rdf:about="&cinema;AssistantOpérateur">
+        <rdfs:label xml:lang="fr">assistant opérateur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienImage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Bruiteur -->
+
+    <owl:Class rdf:about="&cinema;Bruiteur">
+        <rdfs:label xml:lang="fr">bruiteur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Artiste"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Cadreur -->
+
+    <owl:Class rdf:about="&cinema;Cadreur">
+        <rdfs:label xml:lang="fr">cadreur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienImage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CameraOr -->
+
+    <owl:Class rdf:about="&cinema;CameraOr">
+        <rdfs:label xml:lang="fr">Camera d&#39;or</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixSpecifiqueFestivaleDeCannes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Cascadeur -->
+
+    <owl:Class rdf:about="&cinema;Cascadeur">
+        <rdfs:label xml:lang="fr">cascadeur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;estCascadeurPourRole"/>
+                <owl:someValuesFrom rdf:resource="&cinema;Role"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;estCascadeurPourActeur"/>
+                <owl:someValuesFrom rdf:resource="&cinema;Acteur"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Doublure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Ceremonie -->
+
+    <owl:Class rdf:about="&cinema;Ceremonie">
+        <rdfs:label xml:lang="fr">cérémonie</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Competition"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;seDerouleDans"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Lieu"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourDureeJour"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">1</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Competition"/>
+        <owl:disjointWith rdf:resource="&cinema;PrixMedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CesarDuCinema -->
+
+    <owl:Class rdf:about="&cinema;CesarDuCinema">
+        <rdfs:label xml:lang="fr">césars du cinéma</rdfs:label>
+        <rdfs:label xml:lang="fr">césars du cinéma français</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;decerne"/>
+                <owl:someValuesFrom rdf:resource="&cinema;PrixCesarDesCesars"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Ceremonie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ChefDecorateur -->
+
+    <owl:Class rdf:about="&cinema;ChefDecorateur">
+        <rdfs:label xml:lang="fr">chef décorateur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Ensemblier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ChefMonteur -->
+
+    <owl:Class rdf:about="&cinema;ChefMonteur">
+        <rdfs:label xml:lang="fr">chef monteur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienPostProduction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Chien -->
+
+    <owl:Class rdf:about="&cinema;Chien">
+        <rdfs:label xml:lang="fr">chien</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Cinefondation -->
+
+    <owl:Class rdf:about="&cinema;Cinefondation">
+        <rdfs:label xml:lang="fr">Cinéfondation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixSpecifiqueFestivaleDeCannes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Coiffeur -->
+
+    <owl:Class rdf:about="&cinema;Coiffeur">
+        <rdfs:label xml:lang="fr">coiffeur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienHMC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Competition -->
+
+    <owl:Class rdf:about="&cinema;Competition">
+        <rdfs:label xml:lang="fr">compétition</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;decerne"/>
+                <owl:someValuesFrom rdf:resource="&cinema;PrixDecerne"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Evenement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Continent -->
+
+    <owl:Class rdf:about="&cinema;Continent">
+        <rdfs:label xml:lang="fr">continent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;LieuAdministratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Costumiere -->
+
+    <owl:Class rdf:about="&cinema;Costumiere">
+        <rdfs:label xml:lang="fr">costumière</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienHMC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CourantCinematographique -->
+
+    <owl:Class rdf:about="&cinema;CourantCinematographique">
+        <rdfs:label xml:lang="fr">courant cinématographique</rdfs:label>
+        <rdfs:label xml:lang="fr">mouvement cinématographique</rdfs:label>
+        <rdfs:label xml:lang="fr">école cinématographique</rdfs:label>
+        <rdfs:comment xml:lang="fr">instances tirées des sources suivantes:
+http://fr.wikipedia.org/wiki/Cin%C3%A9ma#Mouvements_et_.C3.A9coles
+http://fr.wikipedia.org/wiki/Courant_cin%C3%A9matographique
+http://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Courant_cin%C3%A9matographique</rdfs:comment>
+        <rdfs:comment xml:lang="fr">manière de ressentir l’œuvre</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CourtMetrage -->
+
+    <owl:Class rdf:about="&cinema;CourtMetrage">
+        <rdfs:label xml:lang="fr">court-métrage</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourDureeMinute"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">59</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&cinema;LongMetrage"/>
+        <rdfs:comment xml:lang="fr">film qui dure 59 minutes ou moins, comme expliqué ici: http://fr.wikipedia.org/wiki/Court_m%C3%A9trage#La_d.C3.A9finition_d.27un_court_m.C3.A9trage</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CourtMetrageNomine -->
+
+    <owl:Class rdf:about="&cinema;CourtMetrageNomine">
+        <rdfs:label xml:lang="fr">court-métrage nominé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;CourtMetrage"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;concourePourCompetition"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixOeuvreCinematographique"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;CourtMetrage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CourtMetragePrime -->
+
+    <owl:Class rdf:about="&cinema;CourtMetragePrime">
+        <rdfs:label xml:lang="fr">court-métrage primé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;CourtMetrage"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourRecompenseFilm"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixOeuvreCinematographique"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;CourtMetrage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#DessinAnime -->
+
+    <owl:Class rdf:about="&cinema;DessinAnime">
+        <rdfs:label xml:lang="fr">dessin animé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourTechnique"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;TechniqueDuDessinAnime"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="fr">film qui utilise la technique du dessin animé</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#DeuxiemePrixCinefondation -->
+
+    <owl:Class rdf:about="&cinema;DeuxiemePrixCinefondation">
+        <rdfs:label xml:lang="fr">deuxième prix Cinéfondation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Cinefondation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#DirecteurPhotographie -->
+
+    <owl:Class rdf:about="&cinema;DirecteurPhotographie">
+        <rdfs:label xml:lang="fr">chef opérateur de prises de vues</rdfs:label>
+        <rdfs:label xml:lang="fr">directeur de la photographie</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienImage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#DirecteurPostProduction -->
+
+    <owl:Class rdf:about="&cinema;DirecteurPostProduction">
+        <rdfs:label xml:lang="fr">directeur post production</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienPostProduction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Doubleur -->
+
+    <owl:Class rdf:about="&cinema;Doubleur">
+        <rdfs:label xml:lang="fr">doubleur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estLeDoubleurDeActeur"/>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estLeDoubleurDeRole"/>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;ActeurDeComplement"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estCascadeurPourActeur"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Acteur"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">fait la voix d&#39;un personnage</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Doublure -->
+
+    <owl:Class rdf:about="&cinema;Doublure">
+        <rdfs:label xml:lang="fr">doublure</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;estLaDoublureDeActeur"/>
+                <owl:someValuesFrom rdf:resource="&cinema;Acteur"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;estLaDoublureDeRole"/>
+                <owl:someValuesFrom rdf:resource="&cinema;Role"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;ActeurDeComplement"/>
+        <rdfs:comment xml:lang="fr">remplace un acteur pour une partie du film (pour ses jambes, pour une cascade etc..)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Ensemblier -->
+
+    <owl:Class rdf:about="&cinema;Ensemblier">
+        <rdfs:label xml:lang="fr">décorateur</rdfs:label>
+        <rdfs:label xml:lang="fr">décorateur ensemblier</rdfs:label>
+        <rdfs:label xml:lang="fr">ensemblier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienDecor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Evenement -->
+
+    <owl:Class rdf:about="&cinema;Evenement">
+        <rdfs:label xml:lang="fr">évènement</rdfs:label>
+        <rdfs:label xml:lang="fr">événement</rdfs:label>
+        <owl:equivalentClass rdf:resource="&event;Event"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Festival -->
+
+    <owl:Class rdf:about="&cinema;Festival">
+        <rdfs:label xml:lang="fr">festival</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Competition"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourDureeJour"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="&xsd;integer">1</xsd:minExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Competition"/>
+        <owl:disjointWith rdf:resource="&cinema;PrixMedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FestivalDeCannes -->
+
+    <owl:Class rdf:about="&cinema;FestivalDeCannes">
+        <rdfs:label xml:lang="fr">festival de Cannes</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;decerne"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&cinema;CameraOr"/>
+                            <rdf:Description rdf:about="&cinema;Cinefondation"/>
+                            <rdf:Description rdf:about="&cinema;UnCertainRegard"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;seDerouleDans"/>
+                <owl:hasValue rdf:resource="&cinema;Cannes"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Festival"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FestivalDeClermontFerrand -->
+
+    <owl:Class rdf:about="&cinema;FestivalDeClermontFerrand">
+        <rdfs:label xml:lang="fr">festival de Clermont-Ferrand</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;seDerouleDans"/>
+                <owl:hasValue rdf:resource="&cinema;ClermontFerrand"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Festival"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FestivalDeDeauville -->
+
+    <owl:Class rdf:about="&cinema;FestivalDeDeauville">
+        <rdfs:label xml:lang="fr">festival de Deauville</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;decerne"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&cinema;PrixMichelOrnano"/>
+                            <rdf:Description rdf:about="&cinema;PrixRevelationCartier"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;seDerouleDans"/>
+                <owl:hasValue rdf:resource="&cinema;Deauville"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Festival"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FestivalDuReel -->
+
+    <owl:Class rdf:about="&cinema;FestivalDuReel">
+        <rdfs:label xml:lang="fr">festival du Reel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Festival"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Figurant -->
+
+    <owl:Class rdf:about="&cinema;Figurant">
+        <rdfs:label xml:lang="fr">figurant</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aFigureDans"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Film"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Film -->
+
+    <owl:Class rdf:about="&cinema;Film">
+        <rdfs:label xml:lang="fr">Film</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourActeur"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourProducteur"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourRealisateur"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Film3D -->
+
+    <owl:Class rdf:about="&cinema;Film3D">
+        <rdfs:label xml:lang="fr">Film en 3D</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourTechnique"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;TechniqueDAnimation3D"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmCatastrophe -->
+
+    <owl:Class rdf:about="&cinema;FilmCatastrophe">
+        <rdfs:label xml:lang="fr">film catastrophe</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Catastrophe"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmComedie -->
+
+    <owl:Class rdf:about="&cinema;FilmComedie">
+        <rdfs:label xml:lang="fr">comédie</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Comedie"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmDAction -->
+
+    <owl:Class rdf:about="&cinema;FilmDAction">
+        <rdfs:label xml:lang="fr">film d&#39;action</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Action"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmDAnimation -->
+
+    <owl:Class rdf:about="&cinema;FilmDAnimation">
+        <rdfs:label xml:lang="fr">film d&#39;animation</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourTechnique"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;TechniqueDAnimation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmDAventure -->
+
+    <owl:Class rdf:about="&cinema;FilmDAventure">
+        <rdfs:label xml:lang="fr">film d&#39;aventure</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Aventure"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmDHorreur -->
+
+    <owl:Class rdf:about="&cinema;FilmDHorreur">
+        <rdfs:label xml:lang="fr">film d&#39;horreur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Horreur"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmDeGuerre -->
+
+    <owl:Class rdf:about="&cinema;FilmDeGuerre">
+        <rdfs:label xml:lang="fr">film de guerre</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Guerre"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmDeScienceFiction -->
+
+    <owl:Class rdf:about="&cinema;FilmDeScienceFiction">
+        <rdfs:label xml:lang="fr">film de science-fiction</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;ScienceFiction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmDocumentaire -->
+
+    <owl:Class rdf:about="&cinema;FilmDocumentaire">
+        <rdfs:label xml:lang="fr">documentaire</rdfs:label>
+        <rdfs:label xml:lang="fr">film documentaire</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Documentaire"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmDrame -->
+
+    <owl:Class rdf:about="&cinema;FilmDrame">
+        <rdfs:label xml:lang="fr">drame</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Drame"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmEnNoirEtBlanc -->
+
+    <owl:Class rdf:about="&cinema;FilmEnNoirEtBlanc">
+        <rdfs:label xml:lang="fr">film en noir et blanc</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourTechniqueDePriseDeVues"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PriseDeVueEnNoirEtBlanc"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmFantastique -->
+
+    <owl:Class rdf:about="&cinema;FilmFantastique">
+        <rdfs:label xml:lang="fr">film fantastique</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Fantastique"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmLocalise -->
+
+    <owl:Class rdf:about="&cinema;FilmLocalise">
+        <rdfs:label xml:lang="fr">film localisé</rdfs:label>
+        <rdfs:label xml:lang="fr">version de film</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <rdf:Description rdf:about="&cinema;OeuvreLocalisee"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Film"/>
+        <owl:disjointWith rdf:resource="&cinema;FilmOriginal"/>
+        <rdfs:comment xml:lang="fr">version d&#39;un film qui a été adaptée pour être distribuée dans une région différente de la région d&#39;origine</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmMuet -->
+
+    <owl:Class rdf:about="&cinema;FilmMuet">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&cinema;aPourTechniqueDePriseDeSon"/>
+                                <owl:someValuesFrom rdf:resource="&cinema;TechniqueDePriseDeSon"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="fr">film muet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmNomine -->
+
+    <owl:Class rdf:about="&cinema;FilmNomine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;concourePourCompetition"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Competition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Film"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmOriginal -->
+
+    <owl:Class rdf:about="&cinema;FilmOriginal">
+        <rdfs:label xml:lang="fr">film original</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <rdf:Description rdf:about="&cinema;OeuvreOriginale"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmParGenre -->
+
+    <owl:Class rdf:about="&cinema;FilmParGenre">
+        <rdfs:label xml:lang="fr">FilmParGenre</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Film"/>
+        <rdfs:comment xml:lang="fr">classe créée pour organiser la hierarchie suivant le genre du film</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmPrime -->
+
+    <owl:Class rdf:about="&cinema;FilmPrime">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourRecompenseFilm"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixOeuvreCinematographique"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Film"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmRomance -->
+
+    <owl:Class rdf:about="&cinema;FilmRomance">
+        <rdfs:label xml:lang="fr">romance</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Romance"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmWestern -->
+
+    <owl:Class rdf:about="&cinema;FilmWestern">
+        <rdfs:label xml:lang="fr">western</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourGenre"/>
+                        <owl:hasValue rdf:resource="&cinema;Western"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;FilmParGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#GenreCinematographique -->
+
+    <owl:Class rdf:about="&cinema;GenreCinematographique">
+        <rdfs:label xml:lang="fr">genre</rdfs:label>
+        <rdfs:label xml:lang="fr">genre cinematographique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment xml:lang="fr">instances prises ici:
+http://fr.wikipedia.org/wiki/Portail:Cin%C3%A9ma/Arborescence</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#GrandPrix -->
+
+    <owl:Class rdf:about="&cinema;GrandPrix">
+        <rdfs:label xml:lang="fr">grand prix</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixFilm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#GrandPrixCinemaELLE -->
+
+    <owl:Class rdf:about="&cinema;GrandPrixCinemaELLE">
+        <rdfs:label xml:lang="fr">grand prix cinéma ELLE</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixMedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#IngenieurSon -->
+
+    <owl:Class rdf:about="&cinema;IngenieurSon">
+        <rdfs:label xml:lang="fr">chef-opérateur du son</rdfs:label>
+        <rdfs:label xml:lang="fr">ingenieur du son</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienSon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Jury -->
+
+    <owl:Class rdf:about="&cinema;Jury">
+        <rdfs:label xml:lang="fr">jury</rdfs:label>
+        <rdfs:comment xml:lang="fr">Le groupe de personne qui délibère sur les prix</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Lieu -->
+
+    <owl:Class rdf:about="&cinema;Lieu">
+        <rdfs:label xml:lang="fr">lieu</rdfs:label>
+        <rdfs:label xml:lang="fr">localisation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#LieuAdministratif -->
+
+    <owl:Class rdf:about="&cinema;LieuAdministratif">
+        <rdfs:label xml:lang="fr">lieu administratif</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Lieu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#LongMetrage -->
+
+    <owl:Class rdf:about="&cinema;LongMetrage">
+        <rdfs:label xml:lang="fr">long-métrage</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Film"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&cinema;CourtMetrage"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="fr">film qui dure plus de 59 minutes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#LongMetrageNomine -->
+
+    <owl:Class rdf:about="&cinema;LongMetrageNomine">
+        <rdfs:label xml:lang="fr">long-métrage nominé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;LongMetrage"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;concourePourCompetition"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Competition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;LongMetrage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#LongMetragePrime -->
+
+    <owl:Class rdf:about="&cinema;LongMetragePrime">
+        <rdfs:label xml:lang="fr">long-métrage primé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;LongMetrage"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourRecompenseFilm"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixOeuvreCinematographique"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;LongMetrage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Maquilleur -->
+
+    <owl:Class rdf:about="&cinema;Maquilleur">
+        <rdfs:label xml:lang="fr">maquilleur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienHMC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MembreCeremonieCesarDuCinema -->
+
+    <owl:Class rdf:about="&cinema;MembreCeremonieCesarDuCinema">
+        <rdfs:label xml:lang="fr">Membre du jury de la cérémonie des Cesars du Cinema</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;MembreJury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estMembreDeJuryPourCompetition"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;CesarDuCinema"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;MembreJury"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MembreFestivalDeClermontFerrand -->
+
+    <owl:Class rdf:about="&cinema;MembreFestivalDeClermontFerrand">
+        <rdfs:label xml:lang="fr">membre du jury du festival de Clermont Ferrand</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;MembreJury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estMembreDeJuryPourCompetition"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;FestivalDeClermontFerrand"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;MembreJury"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MembreFestivalDuReel -->
+
+    <owl:Class rdf:about="&cinema;MembreFestivalDuReel">
+        <rdfs:label xml:lang="fr">membre du jury du festival du réel</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;MembreJury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estMembreDeJuryPourCompetition"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;FestivalDuReel"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;MembreJury"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MembreGrandPrixCinemaELLE -->
+
+    <owl:Class rdf:about="&cinema;MembreGrandPrixCinemaELLE">
+        <rdfs:label xml:lang="fr">membre du jury du Grand Prix Cinema ELLE</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;MembreJury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estMembreDeJuryPourCompetition"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;GrandPrixCinemaELLE"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;MembreJury"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MembreJury -->
+
+    <owl:Class rdf:about="&cinema;MembreJury">
+        <rdfs:label xml:lang="fr">membre du jury</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Personne"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estMembreDuJury"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Jury"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Personne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MembreJuryFestivalDeCannes -->
+
+    <owl:Class rdf:about="&cinema;MembreJuryFestivalDeCannes">
+        <rdfs:label xml:lang="fr">membre du jury du festival de Cannes</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;MembreJury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estMembreDeJuryPourCompetition"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;FestivalDeCannes"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;MembreJury"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MembreJuryFestivalDeDeauville -->
+
+    <owl:Class rdf:about="&cinema;MembreJuryFestivalDeDeauville">
+        <rdfs:label xml:lang="fr">membre du jury du festival de Deauville</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;MembreJury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estMembreDeJuryPourCompetition"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;FestivalDeDeauville"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;MembreJury"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MetteurEnSceneNomine -->
+
+    <owl:Class rdf:about="&cinema;MetteurEnSceneNomine">
+        <rdfs:label xml:lang="fr">metteur en scene nominé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;PersonneNominee"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;personneConcourePour"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixMeilleureMiseEnScene"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;PersonneNominee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MetteurEnScenePrime -->
+
+    <owl:Class rdf:about="&cinema;MetteurEnScenePrime">
+        <rdfs:label xml:lang="fr">metteur en scene primé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;PersonnePrimee"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourRecompensePersonne"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixMeilleureMiseEnScene"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;PersonnePrimee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Mixeur -->
+
+    <owl:Class rdf:about="&cinema;Mixeur">
+        <rdfs:label xml:lang="fr">mixeur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienPostProduction"/>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienSon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#MonteurSon -->
+
+    <owl:Class rdf:about="&cinema;MonteurSon">
+        <rdfs:label xml:lang="fr">monteur son</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienPostProduction"/>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienSon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Oeuvre -->
+
+    <owl:Class rdf:about="&cinema;Oeuvre">
+        <rdfs:label xml:lang="fr">oeuvre</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;filmAPourContributeur"/>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#OeuvreLocalisee -->
+
+    <owl:Class rdf:about="&cinema;OeuvreLocalisee">
+        <rdfs:label xml:lang="fr">oeuvre localisée</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Oeuvre"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estLocalisePour"/>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Oeuvre"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;estUneLocalisationDe"/>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&cinema;OeuvreOriginale"/>
+        <rdfs:comment>oeuvre adaptée à la culture d&#39;un lieu géographique (nottament la langue)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#OeuvreOriginale -->
+
+    <owl:Class rdf:about="&cinema;OeuvreOriginale">
+        <rdfs:label xml:lang="fr">oeuvre originale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Oeuvre"/>
+        <rdfs:comment>oeuvre telle qu&#39;elle est conçue par son créateur</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Pays -->
+
+    <owl:Class rdf:about="&cinema;Pays">
+        <rdfs:label xml:lang="fr">pays</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;LieuAdministratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Perchman -->
+
+    <owl:Class rdf:about="&cinema;Perchman">
+        <rdfs:label xml:lang="fr">assistant son</rdfs:label>
+        <rdfs:label xml:lang="fr">perchiste</rdfs:label>
+        <rdfs:label xml:lang="fr">perchman</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienSon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Personne -->
+
+    <owl:Class rdf:about="&cinema;Personne">
+        <rdfs:label xml:lang="fr">personne</rdfs:label>
+        <owl:equivalentClass rdf:resource="&foaf;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PersonneNominee -->
+
+    <owl:Class rdf:about="&cinema;PersonneNominee">
+        <rdfs:label xml:lang="fr">personne nominée</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Personne"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;personneConcourePour"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixArtiste"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Personne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PersonnePrimee -->
+
+    <owl:Class rdf:about="&cinema;PersonnePrimee">
+        <rdfs:label xml:lang="fr">personne primée</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Personne"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourRecompensePersonne"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixArtiste"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Personne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PhotographeDePlateau -->
+
+    <owl:Class rdf:about="&cinema;PhotographeDePlateau">
+        <rdfs:label xml:lang="fr">photographe de plateau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechnicienImage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PremierPrixCinefondation -->
+
+    <owl:Class rdf:about="&cinema;PremierPrixCinefondation">
+        <rdfs:label xml:lang="fr">premier prix Cinéfondation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Cinefondation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PresidentJury -->
+
+    <owl:Class rdf:about="&cinema;PresidentJury">
+        <rdfs:label xml:lang="fr">président du jury</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Personne"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;presideLeJury"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Jury"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;Personne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PriseDeVueEnNoirEtBlanc -->
+
+    <owl:Class rdf:about="&cinema;PriseDeVueEnNoirEtBlanc">
+        <rdfs:label xml:lang="fr">prise de vue en noir et blanc</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechniqueDePriseDeVue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixArtiste -->
+
+    <owl:Class rdf:about="&cinema;PrixArtiste">
+        <rdfs:label xml:lang="fr">prix artistique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixDecerne"/>
+        <owl:disjointWith rdf:resource="&cinema;PrixOeuvreCinematographique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixCesarDesCesars -->
+
+    <owl:Class rdf:about="&cinema;PrixCesarDesCesars">
+        <rdfs:label xml:lang="fr">César des Césars</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixSpecifiqueCeremonieCesar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixCritiqueInternationale -->
+
+    <owl:Class rdf:about="&cinema;PrixCritiqueInternationale">
+        <rdfs:label xml:lang="fr">prix de la critique internationale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixFilm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixDecerne -->
+
+    <owl:Class rdf:about="&cinema;PrixDecerne">
+        <rdfs:label xml:lang="fr">prix décerné</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixDirection -->
+
+    <owl:Class rdf:about="&cinema;PrixDirection">
+        <rdfs:label xml:lang="fr">prix de direction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixArtiste"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixFilm -->
+
+    <owl:Class rdf:about="&cinema;PrixFilm">
+        <rdfs:label xml:lang="fr">prix film</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixOeuvreCinematographique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixFilmdAnimation -->
+
+    <owl:Class rdf:about="&cinema;PrixFilmdAnimation">
+        <rdfs:label xml:lang="fr">prix du film d&#39;animation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixFilm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixHonneur -->
+
+    <owl:Class rdf:about="&cinema;PrixHonneur">
+        <rdfs:label xml:lang="fr">prix d&#39;honneur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixFilm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixInterpretation -->
+
+    <owl:Class rdf:about="&cinema;PrixInterpretation">
+        <rdfs:label xml:lang="fr">prix d&#39;interprétation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixArtiste"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixJury -->
+
+    <owl:Class rdf:about="&cinema;PrixJury">
+        <rdfs:label xml:lang="fr">prix du jury</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixFilm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMedia -->
+
+    <owl:Class rdf:about="&cinema;PrixMedia">
+        <rdfs:label xml:lang="fr">prix média</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Competition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurActeur -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurActeur">
+        <rdfs:label xml:lang="fr">prix du meilleur acteur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixInterpretation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurActeurSecondRole -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurActeurSecondRole">
+        <rdfs:label xml:lang="fr">prix du meilleur second rôle masculin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixInterpretation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurDecor -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurDecor">
+        <rdfs:label xml:lang="fr">prix du meilleur décor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixMeilleursCostumesEtDecors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurEspoirFeminin -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurEspoirFeminin">
+        <rdfs:label xml:lang="fr">prix du meilleur espoir féminin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixInterpretation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurEspoirMasculin -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurEspoirMasculin">
+        <rdfs:label xml:lang="fr">prix du meilleur espoir masculin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixInterpretation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurFilm -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurFilm">
+        <rdfs:label xml:lang="fr">prix du meilleur film</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixFilm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurMaquillage -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurMaquillage">
+        <rdfs:label xml:lang="fr">prix du meilleur maquillage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixMeilleursCostumesEtDecors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurMixageSon -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurMixageSon">
+        <rdfs:label xml:lang="fr">prix meilleur mixage de son</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixMeilleurSon"/>
+        <owl:disjointWith rdf:resource="&cinema;PrixMeilleurSonFilm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurMontage -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurMontage">
+        <rdfs:label xml:lang="fr">prix du meilleur montage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurPremierFilm -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurPremierFilm">
+        <rdfs:label xml:lang="fr">prix du meilleur premier film</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixFilm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurScenario -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurScenario">
+        <rdfs:label xml:lang="fr">prix du meilleur scénario</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixScenario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurScenarioOriginal -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurScenarioOriginal">
+        <rdfs:label xml:lang="fr">prix du meilleur scénario original</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixScenario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurScenarioOriginalOuAdaptation -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurScenarioOriginalOuAdaptation">
+        <rdfs:label xml:lang="fr">prix du meilleur scénario original ou d&#39;adaptation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixScenario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurSon -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurSon">
+        <rdfs:label xml:lang="fr">prix son</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurSonFilm -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurSonFilm">
+        <rdfs:label xml:lang="fr">prix meilleur son</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixMeilleurSon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureActrice -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureActrice">
+        <rdfs:label xml:lang="fr">prix de la meilleure actrice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixInterpretation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureActriceSecondRole -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureActriceSecondRole">
+        <rdfs:label xml:lang="fr">prix du meilleur second rôle féminin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixInterpretation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureAdaptation -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureAdaptation">
+        <rdfs:label xml:lang="fr">prix de la meilleure adaptation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixScenario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureAffiche -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureAffiche">
+        <rdfs:label xml:lang="fr">prix de la meilleure affiche</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureChansonOriginale -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureChansonOriginale">
+        <rdfs:label xml:lang="fr">prix de la meilleure chanson originale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixMeilleureMusique"/>
+        <owl:disjointWith rdf:resource="&cinema;PrixMeilleureMusiqueFilm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureContributionTechnique -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureContributionTechnique">
+        <rdfs:label xml:lang="fr">prix de la meilleure contribution technique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureDirectionArtistique -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureDirectionArtistique">
+        <rdfs:label xml:lang="fr">prix de la meilleure direction artistique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixDirection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureMiseEnScene -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureMiseEnScene">
+        <rdfs:label xml:lang="fr">prix de la meilleure mise en scène</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixDirection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureMusique -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureMusique">
+        <rdfs:label xml:lang="fr">prix musique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureMusiqueFilm -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureMusiqueFilm">
+        <rdfs:label xml:lang="fr">prix de la meilleure musique de film</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixMeilleureMusique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleurePhotographie -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleurePhotographie">
+        <rdfs:label xml:lang="fr">prix de la meilleure photographie</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureProduction -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureProduction">
+        <rdfs:label xml:lang="fr">prix de la meilleure production</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixDirection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleureRealisation -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleureRealisation">
+        <rdfs:label xml:lang="fr">prix de la meilleure réalisation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixDirection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleursCostumes -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleursCostumes">
+        <rdfs:label xml:lang="fr">prix des meilleurs costumes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixMeilleursCostumesEtDecors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleursCostumesEtDecors -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleursCostumesEtDecors">
+        <rdfs:label xml:lang="fr">prix costmes et décors</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeilleursEffetsVisuels -->
+
+    <owl:Class rdf:about="&cinema;PrixMeilleursEffetsVisuels">
+        <rdfs:label xml:lang="fr">prix des meilleurs effets visuels</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMeriteScientifiqueOuTechnique -->
+
+    <owl:Class rdf:about="&cinema;PrixMeriteScientifiqueOuTechnique">
+        <rdfs:label xml:lang="fr">prix du mérite scientifique ou technique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMichelOrnano -->
+
+    <owl:Class rdf:about="&cinema;PrixMichelOrnano">
+        <rdfs:label xml:lang="fr">Michel Ornano</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixSpecifiqueFestivalDeDeauville"/>
+        <owl:disjointWith rdf:resource="&cinema;PrixRevelationCartier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixMiseEnSceneUnCertainRegard -->
+
+    <owl:Class rdf:about="&cinema;PrixMiseEnSceneUnCertainRegard">
+        <rdfs:label xml:lang="fr">prix de la mise en scène un certain regard</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;UnCertainRegard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixOeuvreCinematographique -->
+
+    <owl:Class rdf:about="&cinema;PrixOeuvreCinematographique">
+        <rdfs:label xml:lang="fr">prix oeuvre cinématographique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixDecerne"/>
+        <rdfs:comment>pourrait être un film</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixRevelationCartier -->
+
+    <owl:Class rdf:about="&cinema;PrixRevelationCartier">
+        <rdfs:label xml:lang="fr">Revalation Cartier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixSpecifiqueFestivalDeDeauville"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixScenario -->
+
+    <owl:Class rdf:about="&cinema;PrixScenario">
+        <rdfs:label xml:lang="fr">prix pour scénario</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixDirection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixScientifiqueEtIngenierie -->
+
+    <owl:Class rdf:about="&cinema;PrixScientifiqueEtIngenierie">
+        <rdfs:label xml:lang="fr">prix scientifique et ingénierie</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixSpecialJuryUnCertainRegard -->
+
+    <owl:Class rdf:about="&cinema;PrixSpecialJuryUnCertainRegard">
+        <rdfs:label xml:lang="fr">prix spécial du jury un certain regard</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;UnCertainRegard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixSpecifique -->
+
+    <owl:Class rdf:about="&cinema;PrixSpecifique">
+        <rdfs:label xml:lang="fr">prix spécifique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixOeuvreCinematographique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixSpecifiqueCeremonieCesar -->
+
+    <owl:Class rdf:about="&cinema;PrixSpecifiqueCeremonieCesar">
+        <rdfs:label xml:lang="fr">prix spécifique à la cérémonie des Césars</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixSpecifique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixSpecifiqueFestivalDeDeauville -->
+
+    <owl:Class rdf:about="&cinema;PrixSpecifiqueFestivalDeDeauville">
+        <rdfs:label xml:lang="fr">prix Specifique au festival de Deauville</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixSpecifique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixSpecifiqueFestivaleDeCannes -->
+
+    <owl:Class rdf:about="&cinema;PrixSpecifiqueFestivaleDeCannes">
+        <rdfs:label xml:lang="fr">prix spécifique au festival de Cannes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixSpecifique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixTechnique -->
+
+    <owl:Class rdf:about="&cinema;PrixTechnique">
+        <rdfs:label xml:lang="fr">prix technique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixArtiste"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PrixUnCertainRegard -->
+
+    <owl:Class rdf:about="&cinema;PrixUnCertainRegard">
+        <rdfs:label xml:lang="fr">prix un certain regard</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;UnCertainRegard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Producteur -->
+
+    <owl:Class rdf:about="&cinema;Producteur">
+        <rdfs:label xml:lang="fr">producteur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;aProduit"/>
+                <owl:someValuesFrom rdf:resource="&cinema;Film"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Realisateur -->
+
+    <owl:Class rdf:about="&cinema;Realisateur">
+        <rdfs:label xml:lang="fr">réalisateur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Personne"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aRealise"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Film"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RealisateurNomine -->
+
+    <owl:Class rdf:about="&cinema;RealisateurNomine">
+        <rdfs:label xml:lang="fr">réalisateur nominé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;PersonneNominee"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;personneConcourePour"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixMeilleureRealisation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;PersonneNominee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RealisateurPrime -->
+
+    <owl:Class rdf:about="&cinema;RealisateurPrime">
+        <rdfs:label xml:lang="fr">réalisateur primé</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;PersonnePrimee"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aPourRecompensePersonne"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;PrixMeilleureRealisation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cinema;PersonnePrimee"/>
+        <rdfs:subClassOf rdf:resource="&cinema;Realisateur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Regisseur -->
+
+    <owl:Class rdf:about="&cinema;Regisseur">
+        <rdfs:label xml:lang="fr">regisseur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Technicien"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Role -->
+
+    <owl:Class rdf:about="&cinema;Role">
+        <rdfs:label xml:lang="fr">personnage</rdfs:label>
+        <rdfs:label xml:lang="fr">rôle</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cinema;estIncarnePar"/>
+                <owl:someValuesFrom rdf:resource="&cinema;Acteur"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>entité apparaissant dans une oeuvre (une personne fictive ou réelle, un animal, un végétal, le soleil...)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RoleDActeur -->
+
+    <owl:Class rdf:about="&cinema;RoleDActeur">
+        <rdfs:label xml:lang="fr">rôle d&#39;acteur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RoleDAnimal -->
+
+    <owl:Class rdf:about="&cinema;RoleDAnimal">
+        <rdfs:label xml:lang="fr">rôle d&#39;animal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RoleDeChien -->
+
+    <owl:Class rdf:about="&cinema;RoleDeChien">
+        <rdfs:label xml:lang="fr">rôle de chien</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;RoleDAnimal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RoleDeComissaire -->
+
+    <owl:Class rdf:about="&cinema;RoleDeComissaire">
+        <rdfs:subClassOf rdf:resource="&cinema;Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RolePrincipal -->
+
+    <owl:Class rdf:about="&cinema;RolePrincipal">
+        <rdfs:subClassOf rdf:resource="&cinema;Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Scenariste -->
+
+    <owl:Class rdf:about="&cinema;Scenariste">
+        <rdfs:label xml:lang="fr">scénariste</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Personne"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&cinema;aEcritScenario"/>
+                        <owl:someValuesFrom rdf:resource="&cinema;Film"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Sexe -->
+
+    <owl:Class rdf:about="&cinema;Sexe">
+        <rdfs:label xml:lang="fr">sexe</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cinema;Feminin"/>
+                    <rdf:Description rdf:about="&cinema;Masculin"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Technicien -->
+
+    <owl:Class rdf:about="&cinema;Technicien">
+        <rdfs:label xml:lang="fr">Technicien</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Personne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechnicienDecor -->
+
+    <owl:Class rdf:about="&cinema;TechnicienDecor">
+        <rdfs:label xml:lang="fr">Technicien décor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Technicien"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechnicienHMC -->
+
+    <owl:Class rdf:about="&cinema;TechnicienHMC">
+        <rdfs:label xml:lang="fr">TechnicienHMC</rdfs:label>
+        <rdfs:label xml:lang="fr">technicien habillage, maquillage, coiffure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Technicien"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechnicienImage -->
+
+    <owl:Class rdf:about="&cinema;TechnicienImage">
+        <rdfs:label xml:lang="fr">technicien de l&#39;image</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Technicien"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechnicienPostProduction -->
+
+    <owl:Class rdf:about="&cinema;TechnicienPostProduction">
+        <rdfs:label xml:lang="fr">Technicien post production</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Technicien"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechnicienSon -->
+
+    <owl:Class rdf:about="&cinema;TechnicienSon">
+        <rdfs:label xml:lang="fr">technicien son</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Technicien"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Technicolor -->
+
+    <owl:Class rdf:about="&cinema;Technicolor">
+        <rdfs:label xml:lang="fr">Technicolor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechniqueDePriseDeVue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Technique -->
+
+    <owl:Class rdf:about="&cinema;Technique">
+        <rdfs:label xml:lang="fr">technique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechniqueDAnimation -->
+
+    <owl:Class rdf:about="&cinema;TechniqueDAnimation">
+        <rdfs:label xml:lang="fr">technique d’animation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Technique"/>
+        <rdfs:comment xml:lang="fr">taxonomie ici: http://fr.wikipedia.org/wiki/Animations#Techniques_d.27animation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechniqueDAnimation2DNumerique -->
+
+    <owl:Class rdf:about="&cinema;TechniqueDAnimation2DNumerique">
+        <rdfs:label xml:lang="fr">technique d&#39;animation en 2D numérique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechniqueDImageDeSynthese"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechniqueDAnimation3D -->
+
+    <owl:Class rdf:about="&cinema;TechniqueDAnimation3D">
+        <rdfs:label xml:lang="fr">technique d&#39;animation 3D</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechniqueDImageDeSynthese"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechniqueDImageDeSynthese -->
+
+    <owl:Class rdf:about="&cinema;TechniqueDImageDeSynthese">
+        <rdfs:label xml:lang="fr">technique d&#39;image de synthèse</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;TechniqueDAnimation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechniqueDePriseDeSon -->
+
+    <owl:Class rdf:about="&cinema;TechniqueDePriseDeSon">
+        <rdfs:label xml:lang="fr">technique de prise de son</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechniqueDePriseDeVue -->
+
+    <owl:Class rdf:about="&cinema;TechniqueDePriseDeVue">
+        <rdfs:label xml:lang="fr">technique de prise de vue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TechniqueDuDessinAnime -->
+
+    <owl:Class rdf:about="&cinema;TechniqueDuDessinAnime">
+        <rdfs:subClassOf rdf:resource="&cinema;TechniqueDAnimation"/>
+        <rdfs:comment xml:lang="fr">dessin animé</rdfs:comment>
+        <rdfs:comment xml:lang="fr">technique du dessin animé</rdfs:comment>
+        <rdfs:comment xml:lang="fr">technique d’animation permettant de donner l’illusion du mouvement par des prises de vue successives d’images dessinées</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TroisiemePrixCinefondation -->
+
+    <owl:Class rdf:about="&cinema;TroisiemePrixCinefondation">
+        <rdfs:label xml:lang="fr">troisième prix Cinéfondation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;Cinefondation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#UnCertainRegard -->
+
+    <owl:Class rdf:about="&cinema;UnCertainRegard">
+        <rdfs:label xml:lang="fr">un certain regard</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;PrixSpecifiqueFestivaleDeCannes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Ville -->
+
+    <owl:Class rdf:about="&cinema;Ville">
+        <rdfs:label xml:lang="fr">ville</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cinema;LieuAdministratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/NET/c4dm/event.owl#Event -->
+
+    <owl:Class rdf:about="&event;Event"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="&foaf;Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#AbstractionLyrique -->
+
+    <owl:Thing rdf:about="&cinema;AbstractionLyrique">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Action -->
+
+    <owl:Thing rdf:about="&cinema;Action">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#AlleMachtDerSuper8 -->
+
+    <owl:Thing rdf:about="&cinema;AlleMachtDerSuper8">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Amerique -->
+
+    <owl:Thing rdf:about="&cinema;Amerique">
+        <rdf:type rdf:resource="&cinema;AireGeographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Aventure -->
+
+    <owl:Thing rdf:about="&cinema;Aventure">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Cannes -->
+
+    <owl:Thing rdf:about="&cinema;Cannes">
+        <rdf:type rdf:resource="&cinema;Ville"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Cannes</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Catastrophe -->
+
+    <owl:Thing rdf:about="&cinema;Catastrophe">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CinemaDirect -->
+
+    <owl:Thing rdf:about="&cinema;CinemaDirect">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CinemaModerne -->
+
+    <owl:Thing rdf:about="&cinema;CinemaModerne">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CinemaPur -->
+
+    <owl:Thing rdf:about="&cinema;CinemaPur">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#CinemaUnderground -->
+
+    <owl:Thing rdf:about="&cinema;CinemaUnderground">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ClermontFerrand -->
+
+    <owl:Thing rdf:about="&cinema;ClermontFerrand">
+        <rdf:type rdf:resource="&cinema;Ville"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Clermont-Ferrand</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Comedie -->
+
+    <owl:Thing rdf:about="&cinema;Comedie">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ComedieALItalienne -->
+
+    <owl:Thing rdf:about="&cinema;ComedieALItalienne">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Deauville -->
+
+    <owl:Thing rdf:about="&cinema;Deauville">
+        <rdf:type rdf:resource="&cinema;Ville"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Deauville</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Documentaire -->
+
+    <owl:Thing rdf:about="&cinema;Documentaire">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Dogme95 -->
+
+    <owl:Thing rdf:about="&cinema;Dogme95">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Drame -->
+
+    <owl:Thing rdf:about="&cinema;Drame">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#EcoleDeBarcelone -->
+
+    <owl:Thing rdf:about="&cinema;EcoleDeBarcelone">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#EcoleDeBerlin -->
+
+    <owl:Thing rdf:about="&cinema;EcoleDeBerlin">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Expressionnisme -->
+
+    <owl:Thing rdf:about="&cinema;Expressionnisme">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Fantastique -->
+
+    <owl:Thing rdf:about="&cinema;Fantastique">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Feminin -->
+
+    <owl:Thing rdf:about="&cinema;Feminin">
+        <rdf:type rdf:resource="&cinema;Sexe"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Feminin</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FilmNoir -->
+
+    <owl:Thing rdf:about="&cinema;FilmNoir">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#France -->
+
+    <owl:Thing rdf:about="&cinema;France">
+        <rdf:type rdf:resource="&cinema;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">France</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#FreeCinema -->
+
+    <owl:Thing rdf:about="&cinema;FreeCinema">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Guerre -->
+
+    <owl:Thing rdf:about="&cinema;Guerre">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Horreur -->
+
+    <owl:Thing rdf:about="&cinema;Horreur">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Kammerspiel -->
+
+    <owl:Thing rdf:about="&cinema;Kammerspiel">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Kino -->
+
+    <owl:Thing rdf:about="&cinema;Kino">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Masculin -->
+
+    <owl:Thing rdf:about="&cinema;Masculin">
+        <rdf:type rdf:resource="&cinema;Sexe"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Masculin</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Mumblecore -->
+
+    <owl:Thing rdf:about="&cinema;Mumblecore">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Neorealisme -->
+
+    <owl:Thing rdf:about="&cinema;Neorealisme">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#NewFrenchExtremism -->
+
+    <owl:Thing rdf:about="&cinema;NewFrenchExtremism">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#NonNarration -->
+
+    <owl:Thing rdf:about="&cinema;NonNarration">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#NouveauCinemaAllemand -->
+
+    <owl:Thing rdf:about="&cinema;NouveauCinemaAllemand">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#NouvelHollywood -->
+
+    <owl:Thing rdf:about="&cinema;NouvelHollywood">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#NouvelleVague -->
+
+    <owl:Thing rdf:about="&cinema;NouvelleVague">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Oucipo -->
+
+    <owl:Thing rdf:about="&cinema;Oucipo">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#PremiereAvantGarde -->
+
+    <owl:Thing rdf:about="&cinema;PremiereAvantGarde">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RealismePoetique -->
+
+    <owl:Thing rdf:about="&cinema;RealismePoetique">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RenouveauDuCinemaQuebecois -->
+
+    <owl:Thing rdf:about="&cinema;RenouveauDuCinemaQuebecois">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Romance -->
+
+    <owl:Thing rdf:about="&cinema;Romance">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#RésistanceDesCorps -->
+
+    <owl:Thing rdf:about="&cinema;RésistanceDesCorps">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#ScienceFiction -->
+
+    <owl:Thing rdf:about="&cinema;ScienceFiction">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#TelephoneBlanc -->
+
+    <owl:Thing rdf:about="&cinema;TelephoneBlanc">
+        <rdf:type rdf:resource="&cinema;CourantCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontologies.alwaysdata.net/cinema#Western -->
+
+    <owl:Thing rdf:about="&cinema;Western">
+        <rdf:type rdf:resource="&cinema;GenreCinematographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;DeuxiemePrixCinefondation"/>
+            <rdf:Description rdf:about="&cinema;PremierPrixCinefondation"/>
+            <rdf:Description rdf:about="&cinema;TroisiemePrixCinefondation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;PrixMiseEnSceneUnCertainRegard"/>
+            <rdf:Description rdf:about="&cinema;PrixSpecialJuryUnCertainRegard"/>
+            <rdf:Description rdf:about="&cinema;PrixUnCertainRegard"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;PrixMeilleurActeur"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurActeurSecondRole"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurEspoirFeminin"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurEspoirMasculin"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleureActrice"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleureActriceSecondRole"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;PrixMeilleurScenario"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurScenarioOriginal"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurScenarioOriginalOuAdaptation"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleureAdaptation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;PrixSpecifiqueCeremonieCesar"/>
+            <rdf:Description rdf:about="&cinema;PrixSpecifiqueFestivalDeDeauville"/>
+            <rdf:Description rdf:about="&cinema;PrixSpecifiqueFestivaleDeCannes"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;PrixMeilleureDirectionArtistique"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleureMiseEnScene"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleureProduction"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleureRealisation"/>
+            <rdf:Description rdf:about="&cinema;PrixScenario"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;PrixMeilleurMontage"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurSon"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleureAffiche"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleureContributionTechnique"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleureMusique"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurePhotographie"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleursCostumesEtDecors"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleursEffetsVisuels"/>
+            <rdf:Description rdf:about="&cinema;PrixMeriteScientifiqueOuTechnique"/>
+            <rdf:Description rdf:about="&cinema;PrixScientifiqueEtIngenierie"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;FestivalDeCannes"/>
+            <rdf:Description rdf:about="&cinema;FestivalDeClermontFerrand"/>
+            <rdf:Description rdf:about="&cinema;FestivalDeDeauville"/>
+            <rdf:Description rdf:about="&cinema;FestivalDuReel"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;CameraOr"/>
+            <rdf:Description rdf:about="&cinema;Cinefondation"/>
+            <rdf:Description rdf:about="&cinema;UnCertainRegard"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;PrixMeilleurDecor"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurMaquillage"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleursCostumes"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;Feminin"/>
+            <rdf:Description rdf:about="&cinema;Masculin"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;GrandPrix"/>
+            <rdf:Description rdf:about="&cinema;PrixCritiqueInternationale"/>
+            <rdf:Description rdf:about="&cinema;PrixFilmdAnimation"/>
+            <rdf:Description rdf:about="&cinema;PrixHonneur"/>
+            <rdf:Description rdf:about="&cinema;PrixJury"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurFilm"/>
+            <rdf:Description rdf:about="&cinema;PrixMeilleurPremierFilm"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cinema;PrixDirection"/>
+            <rdf:Description rdf:about="&cinema;PrixInterpretation"/>
+            <rdf:Description rdf:about="&cinema;PrixTechnique"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

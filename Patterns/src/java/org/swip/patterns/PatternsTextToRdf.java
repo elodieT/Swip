@@ -16,8 +16,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
@@ -134,14 +137,13 @@ public class PatternsTextToRdf {
             logger.info("Translating patterns:");
             logger.info("--------------------\n");
             model = ModelFactory.createDefaultModel();
-
             in = PatternsTextToRdf.class.getClassLoader().getResourceAsStream("SwipPatterns.owl");
+            
             if (in == null) {
                 logger.error("SWIP ONTOLOGY PATH ERROR!!");
             }
             // read the RDF/XML file
             model.read(in, null);
-
             uriStart = "http://swip.univ-tlse2.fr/patterns/" + setName + "#";
             String patternOntologyUri = "http://swip.univ-tlse2.fr/ontologies/Patterns";
             patternClass = model.createResource(patternOntologyUri + "#Pattern");

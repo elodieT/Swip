@@ -13,7 +13,7 @@ public class TreeTagger {
 
     private static final Logger logger = Logger.getLogger(TreeTagger.class);
     // on mirail server
-    final String treeTaggerDir = "/home/cpradel/treeTagger";
+    final String treeTaggerDir = "TreeTagger";
     // on irit server
 //    final String treeTaggerDir = "/usr/local/WWW/recherches/MELODI/swip/treeTagger";
     // on my computer

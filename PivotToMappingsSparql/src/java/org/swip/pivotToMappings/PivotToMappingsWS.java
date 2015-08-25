@@ -22,8 +22,7 @@ public class PivotToMappingsWS {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("generateBestMappings")
-    public String generateBestMappings(
-            @QueryParam("pivotQuery") @DefaultValue("") String pivotQueryString,
+    public String generateBestMappings(@QueryParam("pivotQuery") @DefaultValue("") String pivotQueryString,
             @QueryParam("sparqlEndpointUri") @DefaultValue("") String sparqlEndpointUri,
             @QueryParam("useFederatedSparql") @DefaultValue("false") boolean useFederatedSparql,
             @QueryParam("useLarq") @DefaultValue("true") boolean useLarq,
@@ -32,9 +31,10 @@ public class PivotToMappingsWS {
             @QueryParam("queriesNamedGraphUri") @DefaultValue("") String queriesNamedGraphUri,
             @QueryParam("patternsNamedGraphUri") @DefaultValue("") String patternsNamedGraphUri,
             @QueryParam("numMappings") @DefaultValue("50") int numMappings) {
-
         JSONObject response = new JSONObject();
+        
         String queryUri = Controller.getInstance().processQuery(pivotQueryString, sparqlEndpointUri, useFederatedSparql, useLarq, larqParams, kbLocation, queriesNamedGraphUri, patternsNamedGraphUri, numMappings);
+        logger.info( "QueryURI" +queryUri);
         response.put("queryUri", queryUri);
         return response.toString();
     }
@@ -53,7 +53,7 @@ public class PivotToMappingsWS {
             @QueryParam("patternsNamedGraphUri") @DefaultValue("") String patternsNamedGraphUri,
             @QueryParam("numMappings") @DefaultValue("50") int numMappings,
             @QueryParam("callback") @DefaultValue("fn") String callback) {
-
+        logger.info("pivot Query "+pivotQueryString);
         return new JSONWithPadding(generateBestMappings(pivotQueryString, sparqlEndpointUri, useFederatedSparql, useLarq, larqParams, kbLocation, queriesNamedGraphUri, patternsNamedGraphUri, numMappings), callback);
     }
 

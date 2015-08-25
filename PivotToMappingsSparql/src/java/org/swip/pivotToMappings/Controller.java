@@ -59,6 +59,7 @@ public class Controller {
         logger.info("numMappings : " + numMappings);
         SparqlClient sparqlClient = new SparqlClient(sparqlEndpointUri);
         try {
+
             logger.info("Parsing pivot query : " + pivotQueryString);
             final Query userQuery = createQuery(pivotQueryString);
             logger.info("parsed query: " + userQuery.toString() + "\n");
@@ -70,7 +71,7 @@ public class Controller {
                 return queryUri;
             } else {
                 logger.info("================================================================\n");
-                logger.info("Commit query into SPARQL endpoint:");
+                logger.info("Commit query into SPARQL endpoint: " + sparqlEndpointUri);
                 logger.info("---------------------------------\n");
                 commitQuery(queryUri, userQuery, queriesNamedGraphUri, sparqlClient);
                 // change query processing state

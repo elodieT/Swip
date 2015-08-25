@@ -9,13 +9,11 @@ How To install Swip ?
   -NlToPivotRules
   -Patterns
   -PivotToMappingsSparql
-  -SwipWebClientSparql
+  -SwipWebClient
   -SwipWorkflow 
-Also put the .war file of these projects (the ones with java source code : all of them expect SwipWebClientSparql)
+Also put the .war file of these projects (the ones with java source code : all of them expect SwipWebClient)
 You can also deploy these web projects with an  (netbeans, eclipse,etc.)
  
- //check the libs (dereferences for jars possible) in NltToPivotGazetteer, include the GATE-6.1/lib jar files
-
 To set up the fuseki server with your queries and patterns ontologies, you need :
  - to edit your own patterns for your ontology in text format like in Patterns/resources/patterns-musicbrainz.txt~
  - translate your text patterns into rdf by going on the Patterns web page deployed on your tomcat 

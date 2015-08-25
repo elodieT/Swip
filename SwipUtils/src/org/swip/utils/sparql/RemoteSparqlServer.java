@@ -21,7 +21,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-public class RemoteSparqlServer {
+public class RemoteSparqlServer extends SparqlServer{
 
     String endpointUri = null;
 
@@ -118,5 +118,10 @@ public class RemoteSparqlServer {
                 + "    GRAPH ?g { <http://swip.univ-tlse2.fr:8080/musicbrainz/sparql/Coast_To_Coast-c-song-p-person-c-compose-e-Coast_To_Coast-p-> ?a ?b. }\n"
                 + "}\n";
         System.out.println(serv.ask(query));
+    }
+
+    @Override
+    public Iterable<QuerySolution> select(String queryString) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

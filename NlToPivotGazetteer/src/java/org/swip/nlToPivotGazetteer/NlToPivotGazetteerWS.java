@@ -37,9 +37,11 @@ public class NlToPivotGazetteerWS {
                 logger.info("Loading Gate process pipeline.......");
 //                corpusControllerGazetteer = (CorpusController) PersistenceManager.loadObjectFromFile(new File(this.getClass().getClassLoader().getResource("../NlToPivotGazetteerMusicbrainz.gapp").getPath()));
                 // on mirail server
-                corpusControllerGazetteer = (CorpusController) PersistenceManager.loadObjectFromFile(new File("/home/cpradel/gate/NlToPivotGazetteerMusicbrainz.gapp"));
+                //corpusControllerGazetteer = (CorpusController) PersistenceManager.loadObjectFromFile(new File("/home/cpradel/gate/NlToPivotGazetteerPlantae.gapp"));
                 // on my computer
 //                corpusControllerGazetteer = (CorpusController) PersistenceManager.loadObjectFromFile(new File("/home/camille/gate/NlToPivotGazetteerMusicbrainz.gapp"));
+                  corpusControllerGazetteer = (CorpusController) PersistenceManager.loadObjectFromFile(new File("C:\\Users\\Administrateur\\Documents\\SWIP2\\gate\\NlToPivotGazetteerMusicbrainzPlantae.gapp"));
+
                 logger.info("Process pipeline loaded");
             } catch (Exception ex) {
                 logger.error(ex.getMessage());
@@ -60,9 +62,11 @@ public class NlToPivotGazetteerWS {
         File gateHomeFile = userGateFile.getParentFile();
         logger.info("userGateFile: " + userGateFile.getAbsolutePath());
         logger.info("gateHomeFile: " + gateHomeFile.getAbsolutePath());
-        Gate.setGateHome(gateHomeFile);
-        Gate.setUserConfigFile(userGateFile);
-        Gate.init();
+        if(!Gate.isInitialised()){
+            Gate.setGateHome(gateHomeFile);
+            Gate.setUserConfigFile(userGateFile);
+            Gate.init();
+        }
         logger.info("user config file: " + Gate.getUserConfigFile());
         logger.info("user session file: " + Gate.getUserSessionFile());
         logger.info("site config file: " + Gate.getSiteConfigFile());
@@ -70,6 +74,8 @@ public class NlToPivotGazetteerWS {
         logger.info("original user config: " + Gate.getOriginalUserConfig());
         logger.info("known plugins: " + Gate.getKnownPlugins());
         logger.info("built in creole dir: " + Gate.getBuiltinCreoleDir());
+        
+        
     }
 
     @GET
@@ -95,6 +101,7 @@ public class NlToPivotGazetteerWS {
             CorpusController cont = this.getCorpusControllerGazetteer();
             Document doc = (Document) Factory.newDocument(text);
             Corpus corpus = (Corpus) Factory.createResource("gate.corpora.CorpusImpl");
+            logger.info(doc.getDataStore());
             ((List<Document>) corpus).add(doc);
             cont.setCorpus(corpus);
             cont.execute();

@@ -2,6 +2,7 @@ package org.swip.patterns;
 
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -27,5 +28,11 @@ public class PatternsWS {
 
         logger.info(setName);
         return PatternsTextToRdf.patternsTextToRdf(setName, authorUri, ontologyUri, patterns);
+    }
+    
+    @GET
+    @Path("test")
+    public String patternsTextToRdf() {
+        return "TEST";
     }
 }

@@ -31,11 +31,12 @@ public class QueryInterpreter extends Thread {
     @Override
     public void run() {
         boolean commitUpdate = true;
-        boolean logQuery = true;
+        //boolean commitUpdate=false;
+        boolean logQuery = true;        
         logger.info("================================================================");
         logger.info("Infer triples on patterns named graph:");
         logger.info("--------------------------------------\n");
-        inferTriples(queryUri, sparqlClient, commitUpdate, logQuery);
+        //inferTriples(queryUri, sparqlClient, commitUpdate, logQuery);
         logger.info("================================================================");
         logger.info("Matching query elements to knowledge base elements:");
         logger.info("---------------------------------------------------\n");
@@ -44,7 +45,7 @@ public class QueryInterpreter extends Thread {
         logger.info("Mapping patterns elements:");
         logger.info("--------------------------\n");
         performElementMapping(queryUri, sparqlClient, commitUpdate, logQuery);
-        commitUpdate = false;
+        //commitUpdate = false;
         logger.info("================================================================");
         logger.info("Mapping subpattern collections:");
         logger.info("------------------------------\n");
@@ -202,9 +203,10 @@ public class QueryInterpreter extends Thread {
             query += "        {\n"
                     + "          ?r rdfs:label ?l.\n"
                     + "          #FILTER (CONTAINS(STR(?l), STR(?keywordValue)))\n"
-                    + "          FILTER(REGEX(?l, ?keywordValue, 'i'))\n"
+                    + "          #FILTER(REGEX(?l, ?keywordValue, 'i'))\n"
                     + "          #FILTER(bif:contains(?l, '\"beatles with\"'))\n"
                     + "        }\n"
+                    + "          FILTER(REGEX(?l, ?keywordValue, 'i'))\n"
                     + "        BIND (10 AS ?s)\n";
         }
         query += "      }\n"

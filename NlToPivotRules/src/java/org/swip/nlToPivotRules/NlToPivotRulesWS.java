@@ -49,7 +49,8 @@ public class NlToPivotRulesWS {
             @FormParam("lang") String lang,
             @FormParam("pos") @DefaultValue("treeTagger") String posTagger,
             @FormParam("dep") @DefaultValue("malt") String depParser) throws ParseException {
-
+        
+        //DependencyTree dependencyTree = new DependencyTree(dependencyTreestr);
         logger.info("received dependency tree: " + dependencyTree);
         logger.info("Query language: " + lang);
         logger.info("POS tagger: " + posTagger);
