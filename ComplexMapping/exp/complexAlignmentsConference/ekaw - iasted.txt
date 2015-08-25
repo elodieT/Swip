@@ -1,2 +1,0 @@
-Forall x (iasted#Conference_activity(x) <-> Exists y( ekaw#hasEvent(x,y) and ekaw#Conference(y)))
-Forall x (iasted#Social_program(x) <-> Exists y( ekaw#hasEvent(x,y) and ekaw#Social_Event(y)))
