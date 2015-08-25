@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://www.etud.insa-toulouse.fr/svn/RepCon-Lau-Imbert"
+   revision="68"
+   last-author="acimbert"
+   uuid="d0a703d4-8e93-445d-81e7-f4924b2ab37d"
+   url="https://www.etud.insa-toulouse.fr/svn/RepCon-Lau-Imbert/trunk/RepCon/TreeTagger/bin"
+   committed-rev="8"
+   kind="dir"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="chunk-english.bat"
+   checksum="a816885920958c0f1a67f83bf4edc439"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="chunk-french.bat"
+   checksum="26cc7aef70a353e2a7a52476e5c12627"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="chunk-german.bat"
+   checksum="cacfe1c8d842d2478cdbe363bd8a081c"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="tag-dutch.bat"
+   checksum="c0cf452a8ccec33da5f5f467cf555d58"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="tag-english.bat"
+   checksum="7a7865c7fd61c9d1b070100b58708232"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="tag-french.bat"
+   checksum="1361b6db88b68a081339d2fea58dd03a"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="tag-german.bat"
+   checksum="46970e7e305d1e9677b521675d9cf210"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="tag-greek.bat"
+   checksum="c4c1b4e0943d73b406c77e474a3b4fe4"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="tag-italian.bat"
+   checksum="60b542b8e722f915f8a5843458a3e67a"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="tag-spanish.bat"
+   checksum="2bd9ab8273c269a26c69665430d4c71b"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="train-tree-tagger.exe"
+   checksum="7c71586b29a48e3d5d2a519112e01c35"
+   last-author="acimbert"
+   committed-rev="8"
+   text-time="2012-11-29T08:48:54.408000Z"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"
+   prop-time="2012-12-06T14:07:05.151000Z"/>
+<entry
+   name="tree-tagger.exe"
+   checksum="c88d7fe1aa63bebaccfa019c222f54ea"
+   last-author="acimbert"
+   committed-rev="8"
+   text-time="2012-11-29T08:48:54.408000Z"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"
+   prop-time="2012-12-06T14:07:05.440000Z"/>
+</wc-entries>

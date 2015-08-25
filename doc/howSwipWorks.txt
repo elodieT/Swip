@@ -1,0 +1,38 @@
+This is a global description of Swip to understand its architecture.
+For more details : http://thesesups.ups-tlse.fr/2237/1/2013TOU30261.pdf
+
+1 - Nl to Pivot
+	Transforms a Natural Language (NL) Query into a pivot request
+	The SwipWorkflow web service is used to call each web service 
+	with the result of its predecessor
+	1.1. NlToPivotGazetteer : Finds named entities + dates, etc. from the ontologies 
+		you are working on via the Gazetteer 
+		outputs the NL query with "_" instead of " " in named entities 
+			ex : Who played in The Rolling Stones ?
+				-> Who played in The_Rolling_Stones ?
+	1.2. NlToPivotParser : Parses the gazetted sentence (grammatical analysis of the 
+		NL query)
+		outputs the dependency tree of the NL query
+	1.3. NlToPivotRules : transforms the dependency tree into the pivot query
+				ex : ?person: play= The_Rolling_Stones.
+				
+2 - Pivot to Sparql
+	Transforms the pivot query into a Sparql query
+	Only interrogates the sparql endpoint server
+		- Creates a new instance of http://swip.univ-tlse2.fr/ontologies/Queries#query 
+		in the queries named graph (of the sparql end point) and adds properties according
+		to the pivot query on the new instance
+		- Finds the best(s) pattern(s) and sub-pattern(s) in the patterns named graph 
+		to match the query instance
+		- Also finds the best matchings in the knowledge base named graph with elements 
+		from the query (literals)
+--> outputs the best matchings of sparql queries + a descriptive sentence for each one of them
+	
+	-once the query is output, it can be modified 
+		(for example add graph <name of kb graph>{ ... query ...}) around the query to 
+		interrogate the kb named graph of the sparql endpoint for client
+	the sparql endpoint for client is interrogated with the sparql query by clicking on 
+	the highlighted	field of the descriptive sentence
+	
+NB : the sparql endpoint server and sparql endpoint for client URL are different on 
+	 the online swip version but they refer to the same sparql endpoint

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://www.etud.insa-toulouse.fr/svn/RepCon-Lau-Imbert"
+   revision="68"
+   last-author="acimbert"
+   uuid="d0a703d4-8e93-445d-81e7-f4924b2ab37d"
+   url="https://www.etud.insa-toulouse.fr/svn/RepCon-Lau-Imbert/trunk/RepCon/TreeTagger/cmd"
+   committed-rev="8"
+   kind="dir"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="filter-chunker-output-french.perl"
+   checksum="4bfa46a246e6d4bccc9e9c7445a6a6be"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="filter-chunker-output-german.perl"
+   checksum="956cff504b228e013bfa920946303e2e"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="filter-chunker-output.perl"
+   checksum="92266b35bbb2a710486544b1c88b2656"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="mwl-lookup-greek.perl"
+   checksum="5711d5ae534a9487d3559247eb19f852"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="mwl-lookup.perl"
+   checksum="6f0f45c9864d7f1dd9143e6993d2565b"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="tokenize.pl"
+   checksum="4b2c1c2d89cb1bad124b0740e3aa1590"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="utf8-tokenize.perl"
+   checksum="41f098deb9f9e940ed44451b32efd396"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+</wc-entries>

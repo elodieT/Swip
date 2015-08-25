@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY ontology "http://dbpedia.org/ontology/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY list "http://www.co-ode.org/ontologies/list.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://swip.univ-tlse2.fr/ontologies/Queries#"
+     xml:base="http://swip.univ-tlse2.fr/ontologies/Queries"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:list="http://www.co-ode.org/ontologies/list.owl#"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries">
+        <owl:versionIRI>http://swip.univ-tlse2.fr/ontologies/Queries/1.0</owl:versionIRI>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#emHasKeyword -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#emHasKeyword">
+        <rdfs:subPropertyOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#emHasQueryElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#emHasLiteralQe -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#emHasLiteralQe">
+        <rdfs:subPropertyOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#emHasQueryElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#emHasMatching -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#emHasMatching"/>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#emHasPatternElement -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#emHasPatternElement"/>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#emHasQuery -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#emHasQuery"/>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#emHasQueryElement -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#emHasQueryElement"/>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#isMadeUpOf -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#isMadeUpOf"/>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#makesUp -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#makesUp">
+        <owl:inverseOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#isMadeUpOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#matchingHasKeyword -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#matchingHasKeyword">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#matchingHasResource -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#matchingHasResource">
+        <rdfs:domain rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#Matching"/>
+        <rdfs:range rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#queryElementHasMatching -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#queryElementHasMatching">
+        <rdfs:range rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#Matching"/>
+        <rdfs:domain rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#queryHasProcessingState -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#queryHasProcessingState">
+        <rdfs:range rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#queryHasQueryElement -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#queryHasQueryElement">
+        <rdfs:subPropertyOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#isMadeUpOf"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#queryHasSubquery"/>
+            <rdf:Description rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasQueryElement"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#queryHasSubquery -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#queryHasSubquery">
+        <rdfs:subPropertyOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#isMadeUpOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#resourceInvolvedInMatching -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#resourceInvolvedInMatching">
+        <owl:inverseOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#matchingHasResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasE1 -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasE1">
+        <rdfs:subPropertyOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasQueryElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasE2 -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasE2">
+        <rdfs:subPropertyOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasQueryElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasE3 -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasE3">
+        <rdfs:subPropertyOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasQueryElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasQueryElement -->
+
+    <owl:ObjectProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#subqueryHasQueryElement">
+        <rdfs:subPropertyOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#isMadeUpOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#emHasScore -->
+
+    <owl:DatatypeProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#emHasScore">
+        <rdfs:domain rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#ElementMapping"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#matchingHasMatchedLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#matchingHasMatchedLabel">
+        <rdfs:domain rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#Matching"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#matchingHasScore -->
+
+    <owl:DatatypeProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#matchingHasScore">
+        <rdfs:domain rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#Matching"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#queryElementHasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#queryElementHasValue">
+        <rdfs:domain rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryElement"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#queryElementIsQueried -->
+
+    <owl:DatatypeProperty rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#queryElementIsQueried"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#ElementMapping -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#ElementMapping"/>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#EmptyElementMapping -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#EmptyElementMapping">
+        <rdfs:subClassOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#ElementMapping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#KeywordQueryElement -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#KeywordQueryElement">
+        <rdfs:subClassOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#LiteralQueryElement -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#LiteralQueryElement">
+        <rdfs:subClassOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#Matching -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#Matching"/>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#PatternTrippleMapping -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#PatternTrippleMapping">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#PivotQuery -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#PivotQuery"/>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#Q1 -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#Q1">
+        <rdfs:subClassOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#Subquery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#Q2 -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#Q2">
+        <rdfs:subClassOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#Subquery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#Q3 -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#Q3">
+        <rdfs:subClassOf rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#Subquery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#QueryElement -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#QueryElement">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#QueryMapping -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#QueryMapping">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#Subquery -->
+
+    <owl:Class rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#Subquery">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#InitializingQueryInterpretation -->
+
+    <owl:NamedIndividual rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#InitializingQueryInterpretation">
+        <rdf:type rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#NotBegun -->
+
+    <owl:NamedIndividual rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#NotBegun">
+        <rdf:type rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#PerformingElementMapping -->
+
+    <owl:NamedIndividual rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#PerformingElementMapping">
+        <rdf:type rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#PerformingMappingRanking -->
+
+    <owl:NamedIndividual rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#PerformingMappingRanking">
+        <rdf:type rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#PerformingMatching -->
+
+    <owl:NamedIndividual rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#PerformingMatching">
+        <rdf:type rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#PerformingPatternTripleMapping -->
+
+    <owl:NamedIndividual rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#PerformingPatternTripleMapping">
+        <rdf:type rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#PerformingQueryMapping -->
+
+    <owl:NamedIndividual rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#PerformingQueryMapping">
+        <rdf:type rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#PerformingSpCollectionMapping -->
+
+    <owl:NamedIndividual rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#PerformingSpCollectionMapping">
+        <rdf:type rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessed -->
+
+    <owl:NamedIndividual rdf:about="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessed">
+        <rdf:type rdf:resource="http://swip.univ-tlse2.fr/ontologies/Queries#QueryProcessingState"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

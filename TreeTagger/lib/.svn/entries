@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://www.etud.insa-toulouse.fr/svn/RepCon-Lau-Imbert"
+   revision="68"
+   last-author="acimbert"
+   uuid="d0a703d4-8e93-445d-81e7-f4924b2ab37d"
+   url="https://www.etud.insa-toulouse.fr/svn/RepCon-Lau-Imbert/trunk/RepCon/TreeTagger/lib"
+   committed-rev="8"
+   kind="dir"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="dutch-abbreviations"
+   checksum="510b4d11835a5248bd48132f6dd3bab9"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="english-abbreviations"
+   checksum="1446088b37478e85c4018f4cbfc15d7c"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="english-par-linux-3.2.bin.gz"
+   checksum="77f869cdbe0240ab4911cf3f3aab3e6d"
+   last-author="acimbert"
+   committed-rev="8"
+   text-time="2012-11-29T08:48:54.408000Z"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"
+   prop-time="2012-12-06T14:06:59.232000Z"/>
+<entry
+   name="english.par"
+   checksum="c64968dfed3f74d17b63987ff7421151"
+   last-author="acimbert"
+   committed-rev="8"
+   text-time="2012-11-29T08:48:54.408000Z"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"
+   prop-time="2012-12-06T14:06:56.299000Z"/>
+<entry
+   name="french-abbreviations"
+   checksum="7d57d639d78a6bbd51f9955d37214910"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="french-par-linux-3.2-utf8.bin.gz"
+   checksum="70e6e24a057641fba849145663c123f4"
+   last-author="acimbert"
+   committed-rev="8"
+   text-time="2012-11-29T08:48:54.408000Z"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"
+   prop-time="2012-12-06T14:07:02.346000Z"/>
+<entry
+   name="french-par-linux-3.2.bin.gz"
+   checksum="698d953538fa2767ad61404b0e641c2c"
+   last-author="acimbert"
+   committed-rev="8"
+   text-time="2012-11-29T08:48:54.408000Z"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"
+   prop-time="2012-12-06T14:06:46.868000Z"/>
+<entry
+   name="french.par"
+   checksum="41d978f247b23d6fee733da32a55a775"
+   last-author="acimbert"
+   committed-rev="8"
+   text-time="2012-11-29T08:48:54.408000Z"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"
+   prop-time="2012-12-06T14:06:44.378000Z"/>
+<entry
+   name="german-abbreviations"
+   checksum="ce106737f9ab40c809c8a21bc4adf509"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="italian-abbreviations"
+   checksum="3ddce440c6f8aeb2aef6ac01c6b5f1d5"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="spanish-abbreviations"
+   checksum="87a89b6f6ddd11e6e8bbb758b721c873"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="spanish-mwls"
+   checksum="6ec92e2716959fd84496cc1b3f6d6c96"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+</wc-entries>

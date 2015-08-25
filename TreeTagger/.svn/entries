@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://www.etud.insa-toulouse.fr/svn/RepCon-Lau-Imbert"
+   revision="68"
+   last-author="acimbert"
+   uuid="d0a703d4-8e93-445d-81e7-f4924b2ab37d"
+   url="https://www.etud.insa-toulouse.fr/svn/RepCon-Lau-Imbert/trunk/RepCon/TreeTagger"
+   committed-rev="8"
+   kind="dir"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="-l"
+   checksum="8df75dba813ddb45edbb542c7ccc85c1"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="INSTALL.txt"
+   checksum="1805f87a8d3c83d8e0fc3a351c568b3f"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="README.txt"
+   checksum="312b6bdb157d800daa2d53cfb410de9e"
+   last-author="acimbert"
+   text-time="2012-11-29T08:48:54.408000Z"
+   committed-rev="8"
+   kind="file"
+   committed-date="2012-11-29T08:48:54.408799Z"/>
+<entry
+   name="bin"
+   kind="dir"/>
+<entry
+   name="cmd"
+   kind="dir"/>
+<entry
+   name="lib"
+   kind="dir"/>
+</wc-entries>
