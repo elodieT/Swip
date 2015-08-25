@@ -1,0 +1,20 @@
+Phase: cleanGazetteerOutput2
+Input: Lookup TwoTokens
+Options: control = appelt debug = true  
+ 
+Rule: LookupToKeep
+(
+  {Lookup contains TwoTokens}
+)
+:entity
+-->
+{
+gate.AnnotationSet entity = (gate.AnnotationSet)bindings.get("entity");
+gate.Annotation entityAnn = (gate.Annotation)entity.iterator().next();
+gate.FeatureMap features = Factory.newFeatureMap();
+features.put("class", entityAnn.getFeatures().get("class"));
+features.put("inst", entityAnn.getFeatures().get("inst"));
+features.put("rule","LookupToKeep");
+outputAS.add(entity.firstNode(), entity.lastNode(), "LookupToKeep",features);
+}
+

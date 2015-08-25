@@ -1,0 +1,11 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?la ?entity ?cl 
+WHERE {
+	?entity a ?cl.
+	      {?entity dc:title   ?la.}
+	UNION {?entity rdfs:label ?la.}
+	UNION {?entity foaf:name  ?la.}
+}

@@ -1,0 +1,10 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX irstea: <http://ontology.irstea.fr/AgronomicTaxon#>
+
+SELECT ?la ?entity ?cl 
+WHERE {
+	?entity a ?cl.
+	     {?entity rdfs:label ?la.}
+	UNION {?entity irstea:hasVernacularName ?la.}
+	UNION {?entity irstea:hasScientificName ?la.}
+}
