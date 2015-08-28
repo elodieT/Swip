@@ -98,7 +98,13 @@ public class NlToPivotRulesWS {
         } else if (firstTokenLemma.equals("How") && secondTokenLemma.equals("many")) {
             COUNT = true;
             firstNodeToBrowse = firstTokenInSentence;
-        }  
+        } else if (firstTokenLemma.equals("What")){
+            firstNodeToBrowse = firstTokenInSentence;
+            pivotQuery += "thing";
+            queryObject = "thing";
+            nextElementRole = "e2q3";
+        }
+        
         else {
             // look for query object
             searchQueryObject(dt);
