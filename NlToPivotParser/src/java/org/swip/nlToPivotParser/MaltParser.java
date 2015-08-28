@@ -44,7 +44,7 @@ public class MaltParser {
                     serviceEn = new MaltParserService();
                     // on mirail server
                     serviceEn.initializeParserModel("-c engmalt.linear-1.7 -m parse -w C:\\Users\\Administrateur\\Documents\\NetBeansProjects\\NlToPivotParser\\build\\web\\WEB-INF\\classes\\ -lfi parser.log");
-                    logger.info("fin parserModel");
+                    //logger.info("fin parserModel");
                     // on irit server
 //                    serviceEn.initializeParserModel("-c engmalt.linear-1.7 -m parse -w /usr/local/WWW/recherches/MELODI/swip/WEB-INF/classes/ -lfi parser.log");
                     // on my computer
@@ -59,7 +59,7 @@ public class MaltParser {
                 try {
                     serviceFr = new MaltParserService();
                     // on mirail server
-                    serviceFr.initializeParserModel("-c fremalt-1.7 -m parse -w /home/cprade/apache-tomcat-7.0.32/webapps/NlToPivotParser/WEB-INF/classes/ -lfi parser.log");
+                    serviceFr.initializeParserModel("-c fremalt-1.7 -m parse -w C:\\Users\\Administrateur\\Documents\\NetBeansProjects\\NlToPivotParser\\build\\web\\WEB-INF\\classes\\ -lfi parser.log");
                     // on irit server
 //                    serviceFr.initializeParserModel("-c fremalt-1.7 -m parse -w /usr/local/WWW/recherches/MELODI/swip/WEB-INF/classes/ -lfi parser.log");
                     // on my computer
@@ -69,7 +69,6 @@ public class MaltParser {
                 }
             }
             serviceToUse = serviceFr;
-            logger.info("anglais !");
         } else {
             // Todo: rise exception
         }
@@ -190,9 +189,19 @@ public class MaltParser {
 
     static String extractDeprel(Edge edge) {
         String s = edge.toString();
-        int beginIndex = s.indexOf("DEPREL:") + 7;
-        int endIndex = s.indexOf(" ", beginIndex);
-        return s.substring(beginIndex, endIndex);
+        int beginIndex;
+        int endIndex;
+        String sret;
+        if (s.indexOf("DEPREL:")==-1){
+            sret="";
+        }
+        else{
+            beginIndex = s.indexOf("DEPREL:") + 7;
+            endIndex = s.indexOf(" ", beginIndex);
+            sret = s.substring(beginIndex, endIndex);
+        }
+
+        return sret;
     }
 
     public void displayDependencyTree(DependencyStructure graph) {
