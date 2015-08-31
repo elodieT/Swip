@@ -32,11 +32,11 @@ public class QueryInterpreter extends Thread {
     public void run() {
         boolean commitUpdate = true;
         //boolean commitUpdate=false;
-        boolean logQuery = true;        
+        boolean logQuery = false;        
         logger.info("================================================================");
         logger.info("Infer triples on patterns named graph:");
         logger.info("--------------------------------------\n");
-        //inferTriples(queryUri, sparqlClient, commitUpdate, logQuery);
+        inferTriples(queryUri, sparqlClient, commitUpdate, logQuery);
         logger.info("================================================================");
         logger.info("Matching query elements to knowledge base elements:");
         logger.info("---------------------------------------------------\n");
@@ -125,12 +125,12 @@ public class QueryInterpreter extends Thread {
                 + "{\n"
                 + "  GRAPH <" + patternsNamedGraphUri + ">\n"
                 + "  {\n"
-                + "    ?a patterns:hasSubpattern+ ?b.\n"
+                + "    ?a patterns:hasSubpattern/patterns:hasSubpattern+ ?b.\n"
                 + "  }\n"
                 + "}";
         logAndCommitQuery(query, sparqlServer, commitUpdate, logQuery);
         
-        query = "# isMadeUpOf is transitive\n"
+       query = "# isMadeUpOf is transitive\n"
                 + "PREFIX patterns:   <http://swip.univ-tlse2.fr/ontologies/Patterns#>\n"
                 + "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
                 + "PREFIX pf:   <http://jena.hpl.hp.com/ARQ/property#>\n"
@@ -147,7 +147,7 @@ public class QueryInterpreter extends Thread {
                 + "{\n"
                 + "  GRAPH <" + patternsNamedGraphUri + ">\n"
                 + "  {\n"
-                + "    ?a patterns:isMadeUpOf+ ?b.\n"
+                + "    ?a patterns:isMadeUpOf/patterns:isMadeUpOf+ ?b.\n"
                 + "  }\n"
                 + "}";
         logAndCommitQuery(query, sparqlServer, commitUpdate, logQuery);
@@ -1925,7 +1925,7 @@ public class QueryInterpreter extends Thread {
                 + "{\n"
                 + "  GRAPH <" + patternsNamedGraphUri + ">\n"
                 + "  {\n"
-                + "    ?p patterns:patternHasSubpattern ?pt .\n"
+                + "    ?p patterns:hasSubpattern ?pt .\n"
                 + "    ?pt patterns:hasSubject ?subj ;\n"
                 + "        patterns:hasProperty ?prop ;\n"
                 + "        patterns:hasObject ?obj .\n"

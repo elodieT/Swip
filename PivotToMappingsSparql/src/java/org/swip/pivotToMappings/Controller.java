@@ -178,7 +178,7 @@ public class Controller {
                 + updateGraph
                 + "  }\n"
                 + "}\n";
-//        logger.info(query);
+        logger.info(query);
         sparqlServer.update(query);
     }
 
