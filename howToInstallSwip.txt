@@ -3,7 +3,7 @@ How To install Swip ?
  --> Install Fuseki (fuseki 1 because use of the larq properties)
  --> Install Tomcat
  
- Put following folders(on the github repository) in the apache-tomcat-version/webapps folder : 
+ You will need the following projects to deploy Swip : 
   -NlToPivotGazeetter
   -NlToPivotParser
   -NlToPivotRules
@@ -11,8 +11,10 @@ How To install Swip ?
   -PivotToMappingsSparql
   -SwipWebClient
   -SwipWorkflow 
-Also put the .war file of these projects (the ones with java source code : all of them expect SwipWebClient)
-You can also deploy these web projects with an  (netbeans, eclipse,etc.)
+To deploy these projects, you can generate the .war files (open them with an ide and do a clean-build 
+it works for the ones with java source code : all of them expect SwipWebClient). Put the .war files in the 
+apache-tomcat-x.y.z/webapps folder + the SwipWebClient folder
+You can also deploy these web projects with an ide (netbeans, eclipse,etc.)
  
 To set up the fuseki server with your queries and patterns ontologies, you need :
  - to edit your own patterns for your ontology in text format like in Patterns/resources/patterns-musicbrainz.txt~
@@ -23,7 +25,6 @@ To set up the fuseki server with your queries and patterns ontologies, you need 
 	save the RDF result in your data folder (data/[dataset]/rdfdata-patterns/) and create the matching
 	tdbdata-patterns folder (as described in howToInstallFuseki.txt (with tdbloader)
  - personalize the fuseki config.ttl file by changing your graphs' names and the tdbdata folders' location
- - you may also add the larqdata-stop words folder in your data/[dataset] folder and in the config.ttl of fuseki
  - as in config-musicbrainz.ttl, you might want your fuseki dataset to be separated into 3 named graphs .
 	(one for the knowledge base, one for the queries and one for the patterns.)
 	You can also add the patterns_copy graph used for the display of patterns in SwipWebClient 
@@ -33,8 +34,8 @@ To set up the fuseki server with your queries and patterns ontologies, you need 
 To deploy NlToPivotGazetteer, follow howToDeployNlToPivotGazetteer.txt : 
  - copy the gate folder 
  - create the dictionaries folders you need : a folder containing 
-	- a config.ttl file in which you specify the path to your rdf files (the ones you want to build the dictionary from)
-	beware a defaultNS by import.
+	- a config.ttl file in which you specify the path to your rdf files (the ones you want to build the dictionary
+	from)	beware : you need to specify a defaultNS by import.
 	- a query.txt file : a sparql query to get the index of your dictionary (all the string names for example)
 	- possibly a ignoreList.txt
 	- the kim.trusted.entities.cache et le snapshot.properties are automatically generated files
@@ -46,7 +47,8 @@ To deploy NlToPivotGazetteer, follow howToDeployNlToPivotGazetteer.txt :
  - in NlToPivotGazetteerWS.java, change the path to the gapp file
  WARNING : the gate version on the repository is not compatible with Java8. 
  if a ClassFormatNotCompatible exception occurs,try changing your jre/jdk version to 1.7.x in the tomcat setenv file.
- WARNING : to modify the .gapp file, open it with the GATE gui and change what you need (add or delete lkb gazetteer for example).
+ WARNING : to modify the .gapp file, open it with the GATE gui and change what you need (add or delete lkb gazetteer 
+ for example).
  You also need to run GATE with A 1.6 or 1.7 java version. Check the first message displayed when you start Gate,
  if the java version is below 1.8, you can go on File>Restore Application From File and load a .gapp.
  if you have a wrong version of java, open a cmd window, set the JAVA_HOME var to a jdk file 1.7 or 1.6 and run 
@@ -61,18 +63,6 @@ To deploy NlToPivotGazetteer, follow howToDeployNlToPivotGazetteer.txt :
  To deploy NlToPivotParser, specify the treeTagger directory in TreeTagger.java 
 	specify the NlToPivotParser_absolute_path/build/web/WEB-INF/classes/ folder path in MaltParser.java
 	!! if you are using Windows, put \\ instead of / as a directory separator in the path
-	
-To be able to display your patterns with patternViewer, you need to open in Protege the patterns xml rdf file you
-	generated (with the Patterns/patternsTextToRdf.html web service). In Protege>Individuals by class find the class
-	Pattern (Thing>PatternConstituent>Subpattern>SubpatternCollection>NecessarySubpatternCollection>Pattern 
-	in the class hierarchy). click on each instance of Pattern and add an annotation patternHasTriple to link all
-	the triples to their entitled pattern.
-	For example the pattern cd_info patternHasTriple (cd_info_triple1, cd_info_triple2, etc.)
-	If patternHasTriple is not in the list of annotations, create it (Create a new OWLAnnotationProperty)
-		type in the name of the property : patternHasTriple
-		then choose in EntityIRI>Individuals the individuals having the pattern's name and "triple" in their iri
-	Save the modified pattern rdf file as a new document because the new annotation might slow the reasonner.
-	(do not use the file with patternHasTriple to generate the tdbdata-patterns files).
 
 In the config side window, the Larq Param (8.0 as default) is the Larq score minimum for an entity to be taken in account
 	if you have no results, you may consider lowering it.

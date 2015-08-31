@@ -58,6 +58,7 @@ public class PatternsTextToRdf {
     // object properties
     static Property isPatternMadeUpOfProp = null;
     static Property patternHasSubpatternProp = null;
+    static Property patternHasTripleProp = null;
     static Property hasDirectSubpatternProp = null;
     static Property patternHasDirectSubpatternProp = null;
     static Property patternHasPatternElementProp = null;
@@ -172,6 +173,7 @@ public class PatternsTextToRdf {
             ssitHasValueProp = model.createProperty(patternOntologyUri + "#ssitHasValue");
             isPatternMadeUpOfProp = model.createProperty(patternOntologyUri + "#isPatternMadeUpOf");
             patternHasSubpatternProp = model.createProperty(patternOntologyUri + "#patternHasSubpattern");
+            patternHasTripleProp = model.createProperty(patternOntologyUri + "#patternHasTriple");
             hasDirectSubpatternProp = model.createProperty(patternOntologyUri + "#hasDirectSubpattern");
             patternHasDirectSubpatternProp = model.createProperty(patternOntologyUri + "#patternHasDirectSubpattern");
             patternHasPatternElementProp = model.createProperty(patternOntologyUri + "#patternHasPatternElement");
@@ -270,7 +272,7 @@ public class PatternsTextToRdf {
         } else if (sp instanceof PatternTriple) {
             PatternTriple pt = (PatternTriple) sp;
             result = model.createResource(uriStart + patternName + "_triple" + tripleCount++, patternTripleClass);
-
+            patternResource.addProperty(patternHasTripleProp, result);
             Resource res = processPatternElement(pt.getE1(), pattern);
             result.addProperty(hasSubjectProp, res);
             patternResource.addProperty(patternHasPatternElementProp, res);
